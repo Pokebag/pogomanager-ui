@@ -61,7 +61,7 @@ export default class Mon extends BaseModel {
     let stats = this.get('stats')
 
     statNames.forEach(stat => {
-      this.set(stat, stats.iv[stat])
+      this.set(stat, stats.base[stat] + stats.iv[stat])
     })
   }
 

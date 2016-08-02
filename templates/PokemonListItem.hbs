@@ -15,7 +15,7 @@
   #{{displayNo}} {{displayName}}
 </header>
 
-<img alt="A {{name}}{{#if nickname}} named {{nickname}}{{/if}}" height="96" src="{{sprite}}" width="96">
+<img title="A {{name}}{{#if nickname}} named {{nickname}}{{/if}}" height="96" src="{{sprite}}" width="96">
 
 <table>
   <thead>
@@ -25,9 +25,15 @@
   </thead>
 
   <tbody>
-    <td>{{attack}}</td>
-    <td>{{defense}}</td>
-    <td>{{stamina}}</td>
+    <td>
+      <span title="Base ({{stats.base.attack}}) + IV ({{stats.iv.attack}})">{{attack}}</span>
+    </td>
+    <td>
+      <span title="Base ({{stats.base.defense}}) + IV ({{stats.iv.defense}})">{{defense}}</span>
+    </td>
+    <td>
+      <span title="Base ({{stats.base.stamina}}) + IV ({{stats.iv.stamina}})">{{stamina}}</span>
+    </td>
   </tbody>
 </table>
 
