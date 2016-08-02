@@ -40,7 +40,7 @@
 {{pokedex.attributes.entry}}
 
 <menu type="toolbar">
-  <button name="evolve" type="button">Evolve</button>
+  {{#if toEvolve}}<button name="evolve" type="button">Evolve ({{toEvolve}})</button>{{/if}}
   <button name="power-up" type="button">Power Up</button>
   <button name="transfer" type="button">Transfer</button>
 </menu>
