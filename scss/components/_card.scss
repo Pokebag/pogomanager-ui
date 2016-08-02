@@ -1,0 +1,26 @@
+.card {
+  align-items: center;
+  border: 1px solid black;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  table {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    width: 100%;
+
+    thead {
+      border-bottom: 1px solid black;
+    }
+
+    th, td {
+      text-align: center;
+      width: calc(100% / 3)
+    }
+  }
+
+  menu:last-child {
+    width: 100%;
+  }
+}

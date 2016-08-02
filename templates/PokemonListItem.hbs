@@ -1,0 +1,27 @@
+<header>
+  #{{no}} {{displayName}}
+</header>
+
+<img alt="A {{name}}{{#if nickname}} named {{nickname}}{{/if}}" height="96" src="{{sprite}}" width="96">
+
+<table>
+  <thead>
+    <th>Attack</th>
+    <th>Defense</th>
+    <th>Stamina</th>
+  </thead>
+
+  <tbody>
+    <td>{{stats.attack}}</td>
+    <td>{{stats.defense}}</td>
+    <td>{{stats.stamina}}</td>
+  </tbody>
+</table>
+
+{{pokedex.attributes.entry}}
+
+<menu type="toolbar">
+  <button name="evolve" type="button">Evolve</button>
+  <button name="power-up" type="button">Power Up</button>
+  <button name="transfer" type="button">Transfer</button>
+</menu>

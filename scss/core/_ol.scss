@@ -1,0 +1,12 @@
+ol {
+  list-style-type: decimal;
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+
+  &.grid {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+  }
+}

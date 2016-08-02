@@ -1,0 +1,9 @@
+{{#each groups}}
+  <dt>{{year}}</dt>
+  {{#each blogs}}
+    <dd>
+      <a href="/blog/{{attributes.id}}/">{{attributes.title}}</a>
+      <small><time>{{attributes.displayDate}}</time></small>
+    </dd>
+  {{/each}}
+{{/each}}

@@ -1,0 +1,10 @@
+table {}
+
+tbody th {
+  padding-right: 1rem;
+  text-align: right;
+
+  + td {
+    padding-left: 1rem;
+  }
+}
