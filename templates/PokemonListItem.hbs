@@ -1,5 +1,18 @@
+{{#if transferring}}
+  <div class="loading" data-loading-text="Transferring..."></div>
+{{/if}}
+
+{{#if evolving}}
+  <div class="loading" data-loading-text="Evolving..."></div>
+{{/if}}
+
+{{#if poweringUp}}
+  <div class="loading" data-loading-text="Powering Up..."></div>
+{{/if}}
+
 <header>
-  #{{no}} {{displayName}}
+  ({{stats.cp}}CP)
+  #{{displayNo}} {{displayName}}
 </header>
 
 <img alt="A {{name}}{{#if nickname}} named {{nickname}}{{/if}}" height="96" src="{{sprite}}" width="96">

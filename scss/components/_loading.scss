@@ -1,5 +1,14 @@
 .loading:empty {
-  position: relative;
+  align-content: center;
+  align-items: center;
+  background-color: rgba(white, 0.8);
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
 
   &:after,
   &:before {
@@ -41,5 +50,6 @@
   &:before {
     border-color: transparent;
     content: 'Loading';
+    content: attr(data-loading-text);
   }
 }

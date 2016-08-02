@@ -20,6 +20,7 @@ export default class Mon extends BaseModel {
     })
 
     this.on('change:no', (model, entry, options) => {
+      this._setDisplayNo()
       this._setSprite()
     })
   }
@@ -38,6 +39,15 @@ export default class Mon extends BaseModel {
     this.set('displayName', this.get('nickname') ? this.get('nickname') : this.get('name'))
   }
 
+  _setDisplayNo () {
+    let no = this.get('no').toString()
+
+    if (no.length < 2) no = `0${no}`
+    if (no.length < 3) no = `0${no}`
+
+    this.set('displayNo', no)
+  }
+
   _setSprite () {
     this.set('sprite', '//pokeapi.co/media/sprites/pokemon/' + (this.get('no') || 132) + '.png')
   }
@@ -52,11 +62,16 @@ export default class Mon extends BaseModel {
 
   evolve () {
     return new Promise((resolve, reject) => {
+      this.set('evolving', true)
+
       $.ajax({
         data: this.get('id'),
         error: reject,
         method: 'post',
-        success: resolve,
+        success: (response, status, xhr) => {
+          resolve(this.set(response.data))
+          this.set('evolving', false)
+        },
         url: '/api/evolve'
       })
     })
@@ -70,6 +85,7 @@ export default class Mon extends BaseModel {
 
     } else {
       this._setDisplayName()
+      this._setDisplayNo()
       this._getPokedexEntry()
       this._setSprite()
     }
@@ -77,11 +93,16 @@ export default class Mon extends BaseModel {
 
   powerUp () {
     return new Promise((resolve, reject) => {
+      this.set('poweringUp', true)
+
       $.ajax({
         data: this.get('id'),
         error: reject,
         method: 'post',
-        success: resolve,
+        success: (response, status, xhr) => {
+          resolve(this.set(response.data))
+          this.set('poweringUp', false)
+        },
         url: '/api/power-up'
       })
     })
@@ -89,11 +110,15 @@ export default class Mon extends BaseModel {
 
   transfer () {
     return new Promise((resolve, reject) => {
+      this.set('transferring', true)
+
       $.ajax({
         data: this.get('id'),
         error: reject,
         method: 'post',
-        success: resolve,
+        success: (response, status, xhr) => {
+          resolve(this.collection.remove(this))
+        },
         url: '/api/transfer'
       })
     })
@@ -109,10 +134,14 @@ export default class Mon extends BaseModel {
 
   get defaults () {
     return {
+      displayNo: '132',
       egg: false,
+      evolving: false,
       loaded: false,
       pokedex: null,
-      sprite: '//pokeapi.co/media/sprites/pokemon/132.png'
+      poweringUp: false,
+      sprite: '//pokeapi.co/media/sprites/pokemon/132.png',
+      transferring: false
     }
   }
 

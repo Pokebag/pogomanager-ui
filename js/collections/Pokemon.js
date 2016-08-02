@@ -11,25 +11,32 @@ import Mon from 'models/Mon'
 export default class Pokemon extends BaseCollection {
 
   /******************************************************************************\
-    Private Methods
-  \******************************************************************************/
-
-  _bindEvents () {}
-
-
-
-
-
-  /******************************************************************************\
     Public Methods
   \******************************************************************************/
 
-  comparator (model) {
-    return model.get('no')
-  }
+  comparator (mon0, mon1) {
+    let no = [mon0.get('no'), mon1.get('no')]
+    let cp = [mon0.get('stats').cp, mon1.get('stats').cp]
 
-  initialize () {
-    this._bindEvents()
+    if (no[0] > no[1]) {
+      return 1
+    }
+
+    if (no[0] < no[1]) {
+      return -1
+    }
+
+    // If the mons are the same species, sort by CP
+    if (no[0] === no[1]) {
+      if (cp[0] > cp[1]) {
+        return -1
+      }
+      if (cp[0] < cp[1]) {
+        return 1
+      }
+
+      return 0
+    }
   }
 
 
