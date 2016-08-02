@@ -1,0 +1,24 @@
+meter {
+  -webkit-appearance: none;
+  height: 0.3rem;
+  width: 100%;
+
+  &::-webkit-meter-bar {
+    background-color: lightgrey;
+    background-image: none;
+  }
+
+  &::-webkit-meter-optimum-value {
+    background-color: green;
+    background-image: none;
+  }
+
+  &:before {
+    color: grey;
+    content: attr(value) ' / ' attr(max) ' HP';
+    font-size: 0.8em;
+    margin: 0 0.5rem;
+    position: absolute;
+    right: 0;
+  }
+}

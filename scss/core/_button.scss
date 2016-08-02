@@ -8,6 +8,7 @@ button {
   outline: none;
   padding: 1rem 2rem;
   transition: all 0.2s;
+  white-space: nowrap;
 
   &:hover {
     background-color: black;

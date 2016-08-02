@@ -6,18 +6,23 @@
   flex-direction: column;
   position: relative;
 
-  table {
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+  header {
+    display: flex;
+    position: relative;
     width: 100%;
 
-    thead {
-      border-bottom: 1px solid black;
+    .no {
+      background-color: black;
+      color: white;
+      margin-right: 0.5rem;
+      padding: 0 0.5rem;
     }
 
-    th, td {
-      text-align: center;
-      width: calc(100% / 3)
+    .cp {
+      padding: 0 0.5rem;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
 

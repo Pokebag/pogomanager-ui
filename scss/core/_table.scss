@@ -1,10 +1,19 @@
-table {}
+table {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  width: 100%;
 
-tbody th {
-  padding-right: 1rem;
-  text-align: right;
+  thead {
+    border-bottom: 1px solid black;
+    font-weight: bold;
+  }
 
-  + td {
-    padding-left: 1rem;
+  th, td {
+    text-align: center;
+    width: calc(100% / 3)
+  }
+
+  th {
+    font-weight: bold;
   }
 }

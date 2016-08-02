@@ -11,9 +11,18 @@
 {{/if}}
 
 <header>
-  ({{stats.cp}}CP)
-  #{{displayNo}} {{displayName}}
+  <div class="no">
+    #{{displayNo}}
+  </div>
+
+  {{displayName}}
+
+  <div class="cp">
+    {{stats.cp}} CP
+  </div>
 </header>
+
+<meter max="{{stats.maxHP}}" value="{{stats.currentHP}}"></meter>
 
 <img title="A {{name}}{{#if nickname}} named {{nickname}}{{/if}}" height="96" src="{{sprite}}" width="96">
 
@@ -37,7 +46,9 @@
   </tbody>
 </table>
 
-{{pokedex.attributes.entry}}
+{{#if pokedex.attributes.entry}}
+  <p>{{pokedex.attributes.entry}}</p>
+{{/if}}
 
 <menu type="toolbar">
   {{#if toEvolve}}<button name="evolve" type="button">Evolve ({{toEvolve}})</button>{{/if}}
