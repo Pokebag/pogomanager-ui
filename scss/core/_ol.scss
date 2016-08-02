@@ -8,5 +8,12 @@ ol {
     flex-wrap: wrap;
     list-style: none;
     padding-left: 0;
+
+    > * {
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 1;
+      min-width: 20rem;
+    }
   }
 }
