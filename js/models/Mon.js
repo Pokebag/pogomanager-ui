@@ -19,6 +19,10 @@ export default class Mon extends BaseModel {
       this._setDisplayName()
     })
 
+    this.on('change:stats', (model, name, options) => {
+      this._setStats()
+    })
+
     this.on('change:no', (model, entry, options) => {
       this._setDisplayNo()
       this._setSprite()
@@ -50,6 +54,15 @@ export default class Mon extends BaseModel {
 
   _setSprite () {
     this.set('sprite', '//pokeapi.co/media/sprites/pokemon/' + (this.get('no') || 132) + '.png')
+  }
+
+  _setStats () {
+    let statNames = ['attack', 'defense', 'stamina']
+    let stats = this.get('stats')
+
+    statNames.forEach(stat => {
+      this.set(stat, stats.iv[stat])
+    })
   }
 
 
@@ -88,6 +101,7 @@ export default class Mon extends BaseModel {
       this._setDisplayNo()
       this._getPokedexEntry()
       this._setSprite()
+      this._setStats()
     }
   }
 
