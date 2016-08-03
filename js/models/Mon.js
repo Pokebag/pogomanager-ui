@@ -53,7 +53,7 @@ export default class Mon extends BaseModel {
   }
 
   _setSprite () {
-    this.set('sprite', '//pokeapi.co/media/sprites/pokemon/' + (this.get('no') || 132) + '.png')
+    this.set('sprite', '//assets.pokemon.com/assets/cms2/img/pokedex/detail/' + (this.get('displayNo') || 132) + '.png')
   }
 
   _setStats () {
