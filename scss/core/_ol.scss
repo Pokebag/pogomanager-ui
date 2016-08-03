@@ -1,13 +1,12 @@
 ol {
-  list-style-type: decimal;
-  margin-bottom: 2rem;
-  padding-left: 3rem;
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0;
+  width: 100%;
 
   &.grid {
     display: flex;
     flex-wrap: wrap;
-    list-style: none;
-    padding-left: 0;
 
     > * {
       flex-basis: 0;

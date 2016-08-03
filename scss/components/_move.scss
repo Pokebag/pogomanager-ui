@@ -1,0 +1,13 @@
+.move {
+  display: flex;
+  padding: 1rem;
+  width: 100%;
+
+  .name {
+    flex-grow: 1;
+  }
+
+  .damage {
+    flex-grow: 0;
+  }
+}

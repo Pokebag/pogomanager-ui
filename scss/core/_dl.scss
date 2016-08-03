@@ -1,0 +1,14 @@
+dl {
+  padding: 1rem;
+  width: 100%;
+}
+
+dt, dd {
+
+}
+
+dd {
+  &:after {
+    content: '\A'
+  }
+}

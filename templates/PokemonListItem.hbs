@@ -46,11 +46,14 @@
   </tbody>
 </table>
 
-<dl>
+<ol>
   {{#each moves}}
-  <dt>{{this}}</dt>
+    <li class="move">
+      <span class="name">{{name}}</span>
+      <span class="damage">{{damage}}</span>
+    </li>
   {{/each}}
-</dl>
+</ol>
 
 <menu type="toolbar">
   <div class="primary">
