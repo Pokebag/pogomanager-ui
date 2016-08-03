@@ -1,5 +1,7 @@
 .card {
   align-items: center;
+  animation-duration: 0.5s;
+  animation-name: fade-in;
   border: 1px solid black;
   margin: 1rem;
   display: flex;
