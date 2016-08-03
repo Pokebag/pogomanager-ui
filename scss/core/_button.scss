@@ -6,12 +6,16 @@ button {
   font-family: inherit;
   margin: 0;
   outline: none;
-  padding: 1rem 2rem;
+  padding: 1rem;
   transition: all 0.2s;
   white-space: nowrap;
 
-  &:hover {
+  &:not([disabled]):hover {
     background-color: black;
     color: white;
+  }
+
+  &[disabled] {
+    cursor: default;
   }
 }

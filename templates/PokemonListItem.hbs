@@ -24,7 +24,7 @@
 
 <meter max="{{stats.maxHP}}" value="{{stats.currentHP}}"></meter>
 
-<img title="A {{name}}{{#if nickname}} named {{nickname}}{{/if}}" height="96" src="{{sprite}}" width="96">
+<img title="A {{name}}{{#if nickname}} named {{nickname}}{{/if}}" height="215" src="{{sprite}}" width="215">
 
 <table>
   <thead>
@@ -46,12 +46,19 @@
   </tbody>
 </table>
 
-{{#if pokedex.attributes.entry}}
-  <p>{{pokedex.attributes.entry}}</p>
-{{/if}}
+<dl>
+  {{#each moves}}
+  <dt>{{this}}</dt>
+  {{/each}}
+</dl>
 
 <menu type="toolbar">
-  {{#if toEvolve}}<button name="evolve" type="button">Evolve ({{toEvolve}})</button>{{/if}}
-  <button name="power-up" type="button">Power Up</button>
-  <button name="transfer" type="button">Transfer</button>
+  <div class="primary">
+    <button name="power-up" title="Power Up" type="button"><i class="fa fa-bolt fa-fw"></i></button>
+    <button {{#unless toEvolve}}disabled{{/unless}} name="evolve" title="Evolve{{#if toEvolve}} ({{toEvolve}}){{/if}}" type="button"><i class="fa fa-level-up fa-fw"></i></button>
+  </div>
+
+  <div class="secondary">
+    <button name="transfer" title="Transfer" type="button"><i class="fa fa-exchange fa-fw"></i></button>
+  </div>
 </menu>

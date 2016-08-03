@@ -1,3 +1,14 @@
 menu {
+  border-top: 1px solid black;
   display: flex;
+
+  .primary,
+  .secondary {
+    display: flex;
+    width: 50%;
+  }
+
+  .secondary {
+    justify-content: flex-end;
+  }
 }
