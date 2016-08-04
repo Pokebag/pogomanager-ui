@@ -232,13 +232,22 @@ export default class Mon extends BaseModel {
 
   get defaults () {
     return {
+      attack: 9001,
+      candyCount: 0,
+      canEvolve: false,
+      canPowerUp: true,
+      defense: 9001,
       displayNo: '132',
       egg: false,
       evolving: false,
+      famild_id: 132,
       loaded: false,
+      name: 'MISSINGNO.',
+      no: 132,
       pokedex: null,
       poweringUp: false,
       sprite: '//pokeapi.co/media/sprites/pokemon/132.png',
+      stamins: 9001,
       transferring: false
     }
   }
