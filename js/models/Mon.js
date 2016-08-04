@@ -81,12 +81,19 @@ export default class Mon extends BaseModel {
   }
 
   _setStats () {
-    let statNames = ['attack', 'defense', 'stamina']
     let stats = this.get('stats')
+//
+    let baseAttack = 2 * Math.round(Math.sqrt(stats.base.attack * stats.special.attack) + Math.sqrt(stats.speed))
+    let baseDefense = 2 * Math.round(Math.sqrt(stats.base.defense * stats.special.defense) + Math.sqrt(stats.speed))
+    let baseStamina = 2 * stats.hp.max
 
-    statNames.forEach(stat => {
-      this.set(stat, stats.base[stat] + stats.iv[stat])
-    })
+    let fullAttack = Math.round((baseAttack + stats.iv.attack) * stats.cpMultiplier)
+    let fullDefense = Math.round((baseDefense + stats.iv.defense) * stats.cpMultiplier)
+    let fullStamina = Math.round((baseStamina + stats.iv.stamina) * stats.cpMultiplier)
+
+    this.set('attack', fullAttack)
+    this.set('defense', fullDefense)
+    this.set('stamina', fullStamina)
   }
 
 
