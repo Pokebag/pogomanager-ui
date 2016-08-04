@@ -1,5 +1,4 @@
 menu {
-  border-top: 1px solid black;
   display: flex;
 
   .primary,
@@ -8,7 +7,8 @@ menu {
     width: 50%;
   }
 
-  .secondary {
+  .primary + .secondary,
+  .secondary + .primary {
     justify-content: flex-end;
   }
 }

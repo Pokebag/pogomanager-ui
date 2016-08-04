@@ -74,20 +74,27 @@ export default class Mon extends BaseModel {
   \******************************************************************************/
 
   evolve () {
-    return new Promise((resolve, reject) => {
-      this.set('evolving', true)
+    this.appChannel.request('dialog', {
+      body: `Are you sure you want to evolve ${this.get('displayName')}?`,
+      title: 'Confirm'
+    })
+    .then(() => {
+      return new Promise((resolve, reject) => {
+        this.set('evolving', true)
 
-      $.ajax({
-        data: this.get('id'),
-        error: reject,
-        method: 'post',
-        success: (response, status, xhr) => {
-          resolve(this.set(response.data))
-          this.set('evolving', false)
-        },
-        url: '/api/evolve'
+        $.ajax({
+          data: this.get('id'),
+          error: reject,
+          method: 'post',
+          success: (response, status, xhr) => {
+            resolve(this.set(response.data))
+            this.set('evolving', false)
+          },
+          url: '/api/evolve'
+        })
       })
     })
+    .catch(() => {})
   }
 
   initialize () {
@@ -106,36 +113,50 @@ export default class Mon extends BaseModel {
   }
 
   powerUp () {
-    return new Promise((resolve, reject) => {
-      this.set('poweringUp', true)
+    this.appChannel.request('dialog', {
+      body: `Are you sure you want to power up ${this.get('displayName')}?`,
+      title: 'Confirm'
+    })
+    .then(() => {
+      return new Promise((resolve, reject) => {
+        this.set('poweringUp', true)
 
-      $.ajax({
-        data: this.get('id'),
-        error: reject,
-        method: 'post',
-        success: (response, status, xhr) => {
-          resolve(this.set(response.data))
-          this.set('poweringUp', false)
-        },
-        url: '/api/power-up'
+        $.ajax({
+          data: this.get('id'),
+          error: reject,
+          method: 'post',
+          success: (response, status, xhr) => {
+            resolve(this.set(response.data))
+            this.set('poweringUp', false)
+          },
+          url: '/api/power-up'
+        })
       })
     })
+    .catch(() => {})
   }
 
   transfer () {
-    return new Promise((resolve, reject) => {
-      this.set('transferring', true)
+    this.appChannel.request('dialog', {
+      body: `Are you sure you want to transfer ${this.get('displayName')}?`,
+      title: 'Confirm'
+    })
+    .then(() => {
+      return new Promise((resolve, reject) => {
+        this.set('transferring', true)
 
-      $.ajax({
-        data: this.get('id'),
-        error: reject,
-        method: 'post',
-        success: (response, status, xhr) => {
-          resolve(this.collection.remove(this))
-        },
-        url: '/api/transfer'
+        $.ajax({
+          data: this.get('id'),
+          error: reject,
+          method: 'post',
+          success: (response, status, xhr) => {
+            resolve(this.collection.remove(this))
+          },
+          url: '/api/transfer'
+        })
       })
     })
+    .catch(() => {})
   }
 
 
@@ -145,6 +166,10 @@ export default class Mon extends BaseModel {
   /******************************************************************************\
     Getters
   \******************************************************************************/
+
+  get appChannel () {
+    return Backbone.Radio.channel('application')
+  }
 
   get defaults () {
     return {

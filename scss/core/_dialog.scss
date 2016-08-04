@@ -1,1 +1,39 @@
-dialog {}
+dialog {
+  border: 10px solid black;
+  bottom: 0;
+  flex-direction: column;
+  left: 0;
+  margin: auto;
+  min-width: 50vw;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &[open] {
+    display: flex;
+  }
+
+  &::backdrop {
+    background-color: rgba(white, 0.8);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  header, .content {
+    padding: 1rem;
+  }
+
+  header {
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+}

@@ -1,5 +1,6 @@
 import Backbone from 'backbone'
 
+import DialogView from 'views/Dialog'
 import HeaderView from 'views/Header'
 import template from 'templates/Root.hbs'
 
@@ -18,7 +19,13 @@ export default class Root extends Backbone.Marionette.LayoutView {
   }
 
   onRender () {
+    this._initializeRegions()
+
     this.getRegion('header').show(new HeaderView, {
+      replaceElement: true
+    })
+
+    this.getRegion('dialog').show(new DialogView, {
       replaceElement: true
     })
   }
@@ -39,12 +46,22 @@ export default class Root extends Backbone.Marionette.LayoutView {
     return this._regions = {
       footer: 'footer',
       header: 'header',
-      main: 'main'
+      main: 'main',
+      dialog: 'dialog'
     }
   }
 
   get template () {
     return template
+  }
+
+  get ui () {
+    return this._ui || (this._ui = {
+      footer: 'footer',
+      header: 'header',
+      main: 'main',
+      dialog: 'dialog'
+    })
   }
 
 
@@ -57,5 +74,9 @@ export default class Root extends Backbone.Marionette.LayoutView {
 
   set regions (value) {
     this._regions = value
+  }
+
+  set ui (value) {
+    this._ui = value
   }
 }
