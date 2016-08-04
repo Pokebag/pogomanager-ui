@@ -15,11 +15,7 @@ export default class Mon extends BaseModel {
   \******************************************************************************/
 
   _bindEvents () {
-    this.on('change:candies', () => {
-      this._setCandyCount()
-      this._setCanEvolve()
-      this._setCanPowerUp()
-    })
+    this.on('change:candies', this._candyUpdate)
 
     this.on('change:name change:nickname', this._setDisplayName)
 
@@ -31,12 +27,20 @@ export default class Mon extends BaseModel {
     this.on('change:stats', this._setStats)
   }
 
+  _candyUpdate () {
+    this._setCandyCount()
+    this._setCanEvolve()
+    this._setCanPowerUp()
+  }
+
   _getCandy () {
     let candiesCollection = this.appChannel.request('candies')
 
     this.set('candies', candiesCollection.findWhere({
       family_id: this.get('family_id')
     }))
+
+    this.listenTo(this.get('candies'), 'change', this._candyUpdate)
   }
 
   _getPokedexEntry () {
@@ -118,8 +122,15 @@ export default class Mon extends BaseModel {
           error: reject,
           method: 'post',
           success: (response, status, xhr) => {
-            resolve(this.set(response.data))
+            let candies = this.get('candies')
+
+            candies.set('count', candies.get('count') + response.candies)
+
+            this.set(response.data.pokemon)
+            this.collection.sort()
             this.set('evolving', false)
+
+            resolve()
           },
           url: '/api/evolve'
         })
@@ -166,8 +177,11 @@ export default class Mon extends BaseModel {
           error: reject,
           method: 'post',
           success: (response, status, xhr) => {
-            resolve(this.set(response.data))
+            this.set(response.data)
+            this.collection.sort()
             this.set('poweringUp', false)
+
+            resolve()
           },
           url: '/api/power-up'
         })
@@ -190,7 +204,12 @@ export default class Mon extends BaseModel {
           error: reject,
           method: 'post',
           success: (response, status, xhr) => {
-            resolve(this.collection.remove(this))
+            let candies = this.get('candies')
+            candies.set('count', candies.get('count') + response.candies)
+
+            this.collection.remove(this)
+
+            resolve()
           },
           url: '/api/transfer'
         })

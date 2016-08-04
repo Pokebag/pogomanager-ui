@@ -34,12 +34,6 @@ export default class PokemonListItem extends Backbone.Marionette.ItemView {
 
   evolve () {
     this.model.evolve()
-    .then(function () {
-      console.log('Evolved!')
-    })
-    .catch(function () {
-      console.log('Failure!')
-    })
   }
 
   initialize () {
