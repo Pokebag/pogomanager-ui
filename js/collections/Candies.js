@@ -10,8 +10,24 @@ import BaseCollection from 'collections/Base'
 export default class Candies extends BaseCollection {
 
   /******************************************************************************\
+    Public Methods
+  \******************************************************************************/
+
+  initialize () {
+    this.fetch()
+  }
+
+
+
+
+
+  /******************************************************************************\
     Getters
   \******************************************************************************/
+
+  get idAttribute () {
+    return 'famild_id'
+  }
 
   get url () {
     return '/api/candies'

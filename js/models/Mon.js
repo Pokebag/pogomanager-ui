@@ -15,18 +15,28 @@ export default class Mon extends BaseModel {
   \******************************************************************************/
 
   _bindEvents () {
-    this.on('change:name change:nickname', (model, name, options) => {
-      this._setDisplayName()
+    this.on('change:candies', () => {
+      this._setCandyCount()
+      this._setCanEvolve()
+      this._setCanPowerUp()
     })
 
-    this.on('change:stats', (model, name, options) => {
-      this._setStats()
-    })
+    this.on('change:name change:nickname', this._setDisplayName)
 
     this.on('change:no', (model, entry, options) => {
       this._setDisplayNo()
       this._setSprite()
     })
+
+    this.on('change:stats', this._setStats)
+  }
+
+  _getCandy () {
+    let candiesCollection = this.appChannel.request('candies')
+
+    this.set('candies', candiesCollection.findWhere({
+      family_id: this.get('family_id')
+    }))
   }
 
   _getPokedexEntry () {
@@ -39,8 +49,22 @@ export default class Mon extends BaseModel {
 //    })
   }
 
+  _setCandyCount () {
+    this.set('candyCount', this.get('candies').get('count'))
+  }
+
+  _setCanEvolve () {
+    this.set('canEvolve', this.get('toEvolve') <= this.get('candies').get('count'))
+  }
+
+  _setCanPowerUp () {
+//    this.set('canEvolve', this.get('toPowerUp') <= this.get('candies').get('count'))
+  }
+
   _setDisplayName () {
-    this.set('displayName', this.get('nickname') ? this.get('nickname') : this.get('name'))
+    let nickname = this.get('nickname')
+
+    this.set('displayName', nickname ? nickname : this.get('name'))
   }
 
   _setDisplayNo () {
@@ -109,6 +133,15 @@ export default class Mon extends BaseModel {
       this._getPokedexEntry()
       this._setSprite()
       this._setStats()
+    }
+
+    let candiesCollection = this.appChannel.request('candies')
+
+    if (candiesCollection.length) {
+      this._getCandy()
+
+    } else {
+      this.listenToOnce(candiesCollection, 'sync', this._getCandy)
     }
   }
 

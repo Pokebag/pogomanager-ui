@@ -57,8 +57,8 @@
 
 <menu type="toolbar">
   <div class="primary">
-    <button name="power-up" title="Power Up" type="button"><i class="fa fa-bolt fa-fw"></i></button>
-    <button {{#unless toEvolve}}disabled{{/unless}} name="evolve" title="Evolve{{#if toEvolve}} ({{toEvolve}}){{/if}}" type="button"><i class="fa fa-level-up fa-fw"></i></button>
+    <button {{#unless canEvolve}}disabled{{/unless}} name="power-up" title="Power Up" type="button"><i class="fa fa-bolt fa-fw"></i></button>
+    {{#if toEvolve}}<button {{#unless canEvolve}}disabled{{/unless}} name="evolve" title="Evolve ({{toEvolve}})" type="button"><i class="fa fa-level-up fa-fw"></i></button>{{/if}}
   </div>
 
   <div class="secondary">
