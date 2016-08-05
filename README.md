@@ -9,9 +9,11 @@ To run the UI locally, make sure you aready have [the API](http://github.com/Pok
 1. Clone the repository: `git clone git@github.com:Pokebag/pokebag-ui.git && cd pokebag-ui`
 
 1. Install npm and bower modules: `npm install && bower install`
-  * Bower must be installed on your system for this to work: `npm install -g bower`
+  * Bower and Grunt must both be installed on your system for this to work: `npm install -g bower grunt`
 
 1. Start the build pipeline: `grunt`
+
+1. Go to [http://localhost:3000](http://localhost:3000) to see the UI in your browser
 
 ## Contributing
 
