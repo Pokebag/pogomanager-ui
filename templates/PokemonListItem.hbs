@@ -34,13 +34,13 @@
   </thead>
 
   <tbody>
-    <td>
+    <td{{#if perfectAttack}} class="perfect"{{/if}}>
       {{attack}} <span class="text-muted" title="IV Attack">({{stats.iv.attack}})</span>
     </td>
-    <td>
+    <td{{#if perfectDefense}} class="perfect"{{/if}}>
       {{defense}} <span class="text-muted" title="IV Defense">({{stats.iv.defense}})</span>
     </td>
-    <td>
+    <td{{#if perfectStamina}} class="perfect"{{/if}}>
       {{stamina}} <span class="text-muted" title="IV Stamina">({{stats.iv.stamina}})</span>
     </td>
   </tbody>
@@ -57,6 +57,7 @@
 
 <menu type="toolbar">
   <div class="primary">
+    {{toPowerUp.candy}} | {{toPowerUp.stardust}}
     <button {{#unless canPowerUp}}disabled{{/unless}} name="power-up" title="Power Up" type="button"><i class="fa fa-bolt fa-fw"></i></button>
     {{#if toEvolve}}<button {{#unless canEvolve}}disabled{{/unless}} name="evolve" title="Evolve ({{toEvolve}})" type="button"><i class="fa fa-level-up fa-fw"></i></button>{{/if}}
 

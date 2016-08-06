@@ -80,6 +80,26 @@ export default class Mon extends BaseModel {
     this.set('displayNo', no)
   }
 
+  _setPerfect () {
+    this._setPerfectAttack()
+    this._setPerfectDefense()
+    this._setPerfectStamina()
+
+    this.set('perfect', this.get('perfectAttack') && this.get('perfectDefense') && this.get('perfectStamina'))
+  }
+
+  _setPerfectAttack () {
+    this.set('perfectAttack', this.get('stats').attack === 15)
+  }
+
+  _setPerfectDefense () {
+    this.set('perfectDefense', this.get('stats').defense === 15)
+  }
+
+  _setPerfectStamina () {
+    this.set('perfectStamina', this.get('stats').stamina === 15)
+  }
+
   _setSprite () {
     this.set('sprite', '//assets.pokemon.com/assets/cms2/img/pokedex/detail/' + (this.get('displayNo') || 132) + '.png')
   }
@@ -98,6 +118,8 @@ export default class Mon extends BaseModel {
     this.set('attack', fullAttack)
     this.set('defense', fullDefense)
     this.set('stamina', fullStamina)
+
+    this._setPerfect()
   }
 
 
@@ -241,6 +263,7 @@ export default class Mon extends BaseModel {
       egg: false,
       evolving: false,
       famild_id: 132,
+      level: 9001,
       loaded: false,
       name: 'MISSINGNO.',
       no: 132,
