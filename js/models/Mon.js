@@ -247,7 +247,7 @@ export default class Mon extends BaseModel {
       pokedex: null,
       poweringUp: false,
       sprite: '//pokeapi.co/media/sprites/pokemon/132.png',
-      stamins: 9001,
+      stamina: 9001,
       transferring: false
     }
   }
