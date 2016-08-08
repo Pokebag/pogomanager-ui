@@ -9,24 +9,6 @@ import template from 'templates/Login.hbs'
 export default class Login extends Backbone.Marionette.ItemView {
 
   /******************************************************************************\
-    Private Methods
-  \******************************************************************************/
-
-  _bindEvents () {
-//    this.once('signin2:loaded', () => {
-//      gapi.signin2.render('google-signin')
-//    })
-
-    this.model.on('change', function () {
-      console.log('model change:', arguments)
-    })
-  }
-
-
-
-
-
-  /******************************************************************************\
     Public Methods
   \******************************************************************************/
 
@@ -36,14 +18,6 @@ export default class Login extends Backbone.Marionette.ItemView {
     })
 
     super(options)
-  }
-
-  initialize () {
-    this._bindEvents()
-
-//    gapi.load('client:signin2', () => {
-//      this.trigger('signin2:loaded')
-//    })
   }
 
   onRender () {
@@ -64,14 +38,14 @@ export default class Login extends Backbone.Marionette.ItemView {
 
   get events () {
     return this._events || (this._events = {
-      'submit form': 'onSubmit'
+      'click button[type=submit]': 'onSubmit'
     })
   }
 
   get bindings () {
     return {
       '#password': 'password',
-      '#username': 'username'
+      '#email': 'email'
     }
   }
 
@@ -82,7 +56,7 @@ export default class Login extends Backbone.Marionette.ItemView {
   get ui () {
     return this._events || (this._events = {
       password: '#password',
-      username: '#username'
+      email: '#email'
     })
   }
 

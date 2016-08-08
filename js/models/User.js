@@ -7,46 +7,39 @@ import BaseModel from 'models/Base'
 export default class User extends BaseModel {
 
   /******************************************************************************\
-    Private Methods
-  \******************************************************************************/
-
-//  _handleAuthInit () {
-//    gapi.auth2.init({
-//      client_id: '630070412872-isjkc1tg3llpabbok1mkugg184i815tn.apps.googleusercontent.com'
-//    })
-//    .then(() => {
-//      let GoogleAuth = gapi.auth2.getAuthInstance()
-//
-//      this.set({
-//        initialized: true,
-//        GoogleAuth: GoogleAuth
-//      })
-//
-//      GoogleAuth.isSignedIn.listen(this._updateSigninStatus)
-//
-//      this._updateSigninStatus(GoogleAuth.isSignedIn.get())
-//    })
-//  }
-
-//  _updateSigninStatus (isSignedIn) {
-//    this.set('isSignedIn', isSignedIn)
-//  }
-
-
-
-
-
-  /******************************************************************************\
     Public Methods
   \******************************************************************************/
 
-  initialize () {
-//    gapi.load('client:auth2', this._handleAuthInit.bind(this))
-//    gapi.load('client:auth', this._handleAuthInit.bind(this))
+  login () {
+    return new Promise((resolve, reject) => {
+      this.set('loggingIn', true)
+
+      $.ajax({
+        data: {
+          password: this.get('password'),
+          email: this.get('email')
+        },
+        error: reject,
+        method: 'post',
+        success: (response, status, xhr) => {
+          this.set({
+            loggedIn: true,
+            loggingIn: false,
+            password: ''
+          })
+
+          this.routerChannel.request('route', '/pokemon')
+
+          resolve()
+        },
+        url: this.url
+      })
+    })
   }
 
-  login () {
-    console.log('Logging in!', this.get('username'), this.get('password'))
+  logout () {
+    localStorage.setItem('email', null)
+    localStorage.setItem('token', null)
   }
 
 
@@ -59,9 +52,18 @@ export default class User extends BaseModel {
 
   get defaults () {
     return {
-      initialized: false,
-      password: '',
-      username: ''
+      email: '',
+      loggedIn: false,
+      loggingIn: false,
+      password: ''
     }
+  }
+
+  get routerChannel () {
+    return Backbone.Radio.channel('router')
+  }
+
+  get url () {
+    return '/api/login'
   }
 }

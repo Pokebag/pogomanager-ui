@@ -1,6 +1,5 @@
 import Route from '../Route'
 import LoginView from 'views/Login'
-import UserModel from 'models/User'
 
 
 
@@ -25,11 +24,7 @@ export default class Login extends Route {
   \******************************************************************************/
 
   get model () {
-    if (!this._model) {
-      this._model = new UserModel
-    }
-
-    return this._model
+    return Backbone.Radio.channel('application').request('user')
   }
 
   get replaceElement () {

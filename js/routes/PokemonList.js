@@ -34,6 +34,10 @@ export default class PokemonList extends Route {
     return false
   }
 
+  get requireAuthentication () {
+    return true
+  }
+
   get title () {
     return 'Pokemon'
   }

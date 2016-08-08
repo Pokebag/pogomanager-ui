@@ -8,6 +8,7 @@ import RootView from 'views/Root'
 import CandiesCollection from 'collections/Candies'
 import Pokedex from 'collections/Pokedex'
 import PokemonCollection from 'collections/Pokemon'
+import UserModel from 'models/User'
 
 
 
@@ -56,6 +57,7 @@ export default class App extends Backbone.Marionette.Application {
     this.appChannel.reply('candies', this.candies)
     this.appChannel.reply('pokedex', this.pokedex)
     this.appChannel.reply('pokemon', this.pokemon)
+    this.appChannel.reply('user', this.user)
 
     this.appChannel.reply('scheduler', this.scheduler)
   }
@@ -110,6 +112,14 @@ export default class App extends Backbone.Marionette.Application {
     Getters
   \******************************************************************************/
 
+  get appChannel () {
+    if (!this._appChannel) {
+      this._appChannel = Backbone.Radio.channel('application')
+    }
+
+    return this._appChannel
+  }
+
   get candies () {
     if (!this._candies) {
       this._candies = new CandiesCollection
@@ -134,6 +144,14 @@ export default class App extends Backbone.Marionette.Application {
     return this._pokemon
   }
 
+  get routerChannel () {
+    if (!this._routerChannel) {
+      this._routerChannel = Backbone.Radio.channel('router')
+    }
+
+    return this._routerChannel
+  }
+
   get scheduler () {
     if (!this._scheduler) {
       this._scheduler = new Rafael
@@ -142,19 +160,11 @@ export default class App extends Backbone.Marionette.Application {
     return this._scheduler
   }
 
-  get appChannel () {
-    if (!this._appChannel) {
-      this._appChannel = Backbone.Radio.channel('application')
+  get user () {
+    if (!this._user) {
+      this._user = new UserModel
     }
 
-    return this._appChannel
-  }
-
-  get routerChannel () {
-    if (!this._routerChannel) {
-      this._routerChannel = Backbone.Radio.channel('router')
-    }
-
-    return this._routerChannel
+    return this._user
   }
 }

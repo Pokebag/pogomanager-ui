@@ -11,7 +11,9 @@ export default class Router extends Backbone.BaseRouter {
   \******************************************************************************/
 
   _bindEvents () {
-    this.channel.on('route', this.navigate)
+    this.channel.reply('route', fragment => {
+      this.navigate(fragment, {trigger: true})
+    })
   }
 
 
@@ -23,6 +25,12 @@ export default class Router extends Backbone.BaseRouter {
   \******************************************************************************/
 
   onNavigate (routeData) {
+    if (routeData.linked.requireAuthentication) {
+      if (!this.appChannel.request('user').get('loggedIn')) {
+        return this.channel.request('route', '/login')
+      }
+    }
+
     this.channel.trigger('before:navigate', routeData.linked)
 
     routeData.linked.show(routeData.params)
@@ -35,6 +43,10 @@ export default class Router extends Backbone.BaseRouter {
     })
   }
 
+  initialize () {
+    this._bindEvents()
+  }
+
 
 
 
@@ -42,6 +54,10 @@ export default class Router extends Backbone.BaseRouter {
   /******************************************************************************\
     Getters
   \******************************************************************************/
+
+  get appChannel () {
+    return Backbone.Radio.channel('application')
+  }
 
   get channel () {
     return Backbone.Radio.channel('router')

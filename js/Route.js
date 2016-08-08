@@ -72,6 +72,10 @@ export default class Route extends Backbone.Marionette.Object {
     return true
   }
 
+  get requireAuthentication () {
+    return false
+  }
+
   get routerChannel () {
     return Backbone.Radio.channel('router')
   }
