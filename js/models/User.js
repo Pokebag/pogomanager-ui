@@ -19,7 +19,13 @@ export default class User extends BaseModel {
           password: this.get('password'),
           email: this.get('email')
         },
-        error: reject,
+        error: (xhr) => {
+          if (xhr.status === 403) {
+            this.routerChannel.request('route', '/login')
+          }
+
+          reject()
+        },
         method: 'post',
         success: (response, status, xhr) => {
           this.set({
@@ -38,8 +44,7 @@ export default class User extends BaseModel {
   }
 
   logout () {
-    localStorage.setItem('email', null)
-    localStorage.setItem('token', null)
+    this.set('loggedIn', false)
   }
 
 

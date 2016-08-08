@@ -10,6 +10,22 @@ export default class Router extends Backbone.BaseRouter {
     Private Methods
   \******************************************************************************/
 
+  _authenticate (routeData) {
+    if (routeData.linked.requireAuthentication) {
+      let user = this.appChannel.request('user')
+
+      if (!user.get('loggedIn')) {
+        return user.login()
+
+      } else {
+        return Promise.resolve()
+      }
+
+    } else {
+      return Promise.resolve()
+    }
+  }
+
   _bindEvents () {
     this.channel.reply('route', fragment => {
       this.navigate(fragment, {trigger: true})
@@ -25,21 +41,22 @@ export default class Router extends Backbone.BaseRouter {
   \******************************************************************************/
 
   onNavigate (routeData) {
-    if (routeData.linked.requireAuthentication) {
-      if (!this.appChannel.request('user').get('loggedIn')) {
-        return this.channel.request('route', '/login')
-      }
-    }
-
-    this.channel.trigger('before:navigate', routeData.linked)
-
-    routeData.linked.show(routeData.params)
+    this._authenticate(routeData)
     .then(() => {
-      this.channel.trigger('navigate', routeData.linked)
+      this.channel.trigger('before:navigate', routeData.linked)
+
+      routeData.linked.show(routeData.params)
+      .then(() => {
+        this.channel.trigger('navigate', routeData.linked)
+
+      })
+      .catch((error) => {
+        console.error(error)
+        this.channel.trigger('error')
+      })
     })
-    .catch((error) => {
-      console.error(error)
-      this.channel.trigger('error')
+    .catch(() => {
+      return this.channel.request('route', '/login')
     })
   }
 

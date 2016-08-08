@@ -13,6 +13,11 @@ export default class Login extends Route {
 
   onBeforeShow (params) {
     this.viewOptions.model = this.model
+
+    console.log(this.model)
+    if (this.model.get('loggedIn')) {
+      this.routerChannel.request('route', '/pokemon')
+    }
   }
 
 

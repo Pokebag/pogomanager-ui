@@ -11,11 +11,13 @@ export default class Logout extends Route {
   \******************************************************************************/
 
   onBeforeShow () {
-    if (this.appChannel.request('user').get('loggedIn')) {
+    let user = this.appChannel.request('user')
+
+    if (user.get('loggedIn')) {
       $.ajax({
         method: 'post',
         success: (response, status, xhr) => {
-          console.log('logged out!')
+          user.logout()
           this.routerChannel.request('route', '/login')
         },
         url: '/api/logout'
