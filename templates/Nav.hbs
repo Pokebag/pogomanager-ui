@@ -5,6 +5,7 @@
     </a>
   </li>
 
+<!--
   <li>
     <a href="/eggs">
       <span>Eggs</span>
@@ -22,16 +23,21 @@
       <span>Badges</span>
     </a>
   </li>
+-->
 
+  {{#unless loggedIn}}
   <li>
     <a href="/login">
       <span>Login</span>
     </a>
   </li>
+  {{/unless}}
 
+  {{#if loggedIn}}
   <li>
     <a href="/logout">
       <span>Logout</span>
     </a>
   </li>
+  {{/if}}
 </ul>

@@ -55,9 +55,8 @@ export default class App extends Backbone.Marionette.Application {
     this.appChannel.reply('candies', this.candies)
     this.appChannel.reply('pokedex', this.pokedex)
     this.appChannel.reply('pokemon', this.pokemon)
-    this.appChannel.reply('user', this.user)
-
     this.appChannel.reply('scheduler', this.scheduler)
+    this.appChannel.reply('user', this.user)
   }
 
 
@@ -77,6 +76,9 @@ export default class App extends Backbone.Marionette.Application {
   }
 
   onStart () {
+    // Bind application-wide events
+    this._bindEvents()
+
     // Grab the title element. We'll use this reference to update the page
     // title when we navigate
     this.title = document.querySelector('title')
@@ -88,9 +90,6 @@ export default class App extends Backbone.Marionette.Application {
     // The `main` region is where we'll show pretty much every view so we'll
     // attach it to the app object for easy access
     this.main = this.RootView.getRegion('main')
-
-    // Bind application-wide events
-    this._bindEvents()
 
     // Start the router with push state routing enabled
     Backbone.history.start({

@@ -8,6 +8,14 @@ import template from 'templates/Nav.hbs'
 
 export default class Nav extends Backbone.Marionette.ItemView {
 
+  _bindEvents () {
+    this.listenTo(this.model, 'change', this.render)
+  }
+
+
+
+
+
   /******************************************************************************\
     Public Methods
   \******************************************************************************/
@@ -18,6 +26,10 @@ export default class Nav extends Backbone.Marionette.ItemView {
     })
 
     super(options)
+
+    this._bindEvents()
+
+    console.log(this.model)
   }
 
 
@@ -27,6 +39,10 @@ export default class Nav extends Backbone.Marionette.ItemView {
   /******************************************************************************\
     Public Methods
   \******************************************************************************/
+
+  get model () {
+    return Backbone.Radio.channel('application').request('user')
+  }
 
   get tagName () {
     return 'nav'
