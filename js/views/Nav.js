@@ -28,8 +28,6 @@ export default class Nav extends Backbone.Marionette.ItemView {
     super(options)
 
     this._bindEvents()
-
-    console.log(this.model)
   }
 
 
