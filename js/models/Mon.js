@@ -258,6 +258,7 @@ export default class Mon extends BaseModel {
       candyCount: 0,
       canEvolve: false,
       canPowerUp: true,
+      cp: 9001,
       defense: 9001,
       displayNo: '132',
       egg: false,
