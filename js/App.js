@@ -5,9 +5,7 @@ import Router from './Router'
 import Routes from './Routes'
 import RootView from 'views/Root'
 
-import CandiesCollection from 'collections/Candies'
 import Pokedex from 'collections/Pokedex'
-import PokemonCollection from 'collections/Pokemon'
 import UserModel from 'models/User'
 
 
@@ -121,11 +119,7 @@ export default class App extends Backbone.Marionette.Application {
   }
 
   get candies () {
-    if (!this._candies) {
-      this._candies = new CandiesCollection
-    }
-
-    return this._candies
+    return this.user.get('candies')
   }
 
   get pokedex () {
@@ -137,11 +131,7 @@ export default class App extends Backbone.Marionette.Application {
   }
 
   get pokemon () {
-    if (!this._pokemon) {
-      this._pokemon = new PokemonCollection
-    }
-
-    return this._pokemon
+    return this.user.get('pokemon')
   }
 
   get routerChannel () {

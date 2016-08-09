@@ -1,4 +1,6 @@
 import BaseModel from 'models/Base'
+import CandiesCollection from 'collections/Candies'
+import PokemonCollection from 'collections/Pokemon'
 
 
 
@@ -34,6 +36,11 @@ export default class User extends BaseModel {
             password: ''
           })
 
+          this.get('candies').fetch()
+          .then(() => {
+            this.get('pokemon').fetch()
+          })
+
           this.routerChannel.request('route', '/pokemon')
 
           resolve()
@@ -44,6 +51,8 @@ export default class User extends BaseModel {
   }
 
   logout () {
+    this.get('candies').reset()
+    this.get('pokemon').reset()
     this.set('loggedIn', false)
   }
 
@@ -57,10 +66,12 @@ export default class User extends BaseModel {
 
   get defaults () {
     return {
+      candies: new CandiesCollection,
       email: '',
       loggedIn: false,
       loggingIn: false,
-      password: ''
+      password: '',
+      pokemon: new PokemonCollection
     }
   }
 
