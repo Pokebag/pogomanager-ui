@@ -87,24 +87,38 @@ export default class Mon extends BaseModel {
     this.set('displayNo', no)
   }
 
-  _setPerfect () {
-    this._setPerfectAttack()
-    this._setPerfectDefense()
-    this._setPerfectStamina()
+  _setPerfection () {
+    let stats = this.get('stats')
 
-    this.set('perfect', this.get('perfectAttack') && this.get('perfectDefense') && this.get('perfectStamina'))
+    this._setAttackPerfection()
+    this._setDefensePerfection()
+    this._setStaminaPerfection()
+
+    let totalIV = stats.iv.attack + stats.iv.defense + stats.iv.stamina
+    let perfection = ((totalIV / 45) * 100).toPrecision(3)
+
+    this.set('perfection', perfection)
   }
 
-  _setPerfectAttack () {
-    this.set('perfectAttack', this.get('stats').attack === 15)
+  _setAttackPerfection () {
+    let attackIV = this.get('stats').iv.attack
+    let perfection = ((attackIV / 15) * 100).toPrecision(3)
+
+    this.set('attackPerfection', perfection)
   }
 
-  _setPerfectDefense () {
-    this.set('perfectDefense', this.get('stats').defense === 15)
+  _setDefensePerfection () {
+    let defenseIV = this.get('stats').iv.defense
+    let perfection = ((defenseIV / 15) * 100).toPrecision(3)
+
+    this.set('defensePerfection', perfection)
   }
 
-  _setPerfectStamina () {
-    this.set('perfectStamina', this.get('stats').stamina === 15)
+  _setStaminaPerfection () {
+    let staminaIV = this.get('stats').iv.stamina
+    let perfection = ((staminaIV / 15) * 100).toPrecision(3)
+
+    this.set('staminaPerfection', perfection)
   }
 
   _setSprite () {
@@ -126,7 +140,7 @@ export default class Mon extends BaseModel {
     this.set('defense', fullDefense)
     this.set('stamina', fullStamina)
 
-    this._setPerfect()
+    this._setPerfection()
   }
 
 
