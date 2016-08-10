@@ -18,7 +18,7 @@
   {{displayName}}
 
   <div class="cp">
-    {{cp}} CP
+    {{cp}} CP ({{perfection}}%)
   </div>
 </header>
 
@@ -34,15 +34,28 @@
   </thead>
 
   <tbody>
-    <td{{#if perfectAttack}} class="perfect"{{/if}}>
-      {{attack}} <span class="text-muted" title="IV Attack">({{stats.iv.attack}})</span>
-    </td>
-    <td{{#if perfectDefense}} class="perfect"{{/if}}>
-      {{defense}} <span class="text-muted" title="IV Defense">({{stats.iv.defense}})</span>
-    </td>
-    <td{{#if perfectStamina}} class="perfect"{{/if}}>
-      {{stamina}} <span class="text-muted" title="IV Stamina">({{stats.iv.stamina}})</span>
-    </td>
+    <tr>
+      <td>
+        {{attack}} <span class="text-muted" title="IV Attack">({{stats.iv.attack}})</span>
+      </td>
+      <td>
+        {{defense}} <span class="text-muted" title="IV Defense">({{stats.iv.defense}})</span>
+      </td>
+      <td>
+        {{stamina}} <span class="text-muted" title="IV Stamina">({{stats.iv.stamina}})</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{attackPerfection}}%
+      </td>
+      <td>
+        {{defensePerfection}}%
+      </td>
+      <td>
+        {{staminaPerfection}}%
+      </td>
+    </tr>
   </tbody>
 </table>
 
