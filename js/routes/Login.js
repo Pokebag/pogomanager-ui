@@ -35,6 +35,10 @@ export default class Login extends Route {
     return false
   }
 
+  get title () {
+    return 'Login'
+  }
+
   get view () {
     return LoginView
   }
