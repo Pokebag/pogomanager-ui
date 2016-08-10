@@ -111,7 +111,7 @@ export default class Mon extends BaseModel {
 
   _setStats () {
     let stats = this.get('stats')
-//
+
     let baseAttack = 2 * Math.round(Math.sqrt(stats.base.attack * stats.special.attack) + Math.sqrt(stats.speed))
     let baseDefense = 2 * Math.round(Math.sqrt(stats.base.defense * stats.special.defense) + Math.sqrt(stats.speed))
     let baseStamina = 2 * stats.hp.max
@@ -151,7 +151,7 @@ export default class Mon extends BaseModel {
           success: (response, status, xhr) => {
             let candies = this.get('candies')
 
-            candies.set('count', candies.get('count') + response.candies)
+            candies.set('count', candies.get('count') + response.data.candies)
 
             this.set(response.data.pokemon)
             this.collection.sort()
@@ -204,8 +204,13 @@ export default class Mon extends BaseModel {
           error: reject,
           method: 'post',
           success: (response, status, xhr) => {
+            let candies = this.get('candies')
+
+            candies.set('count', candies.get('count') - this.get('toPowerUp').candy)
+
             this.set(response.data)
             this.collection.sort()
+
             this.set('poweringUp', false)
 
             resolve()
@@ -232,7 +237,8 @@ export default class Mon extends BaseModel {
           method: 'post',
           success: (response, status, xhr) => {
             let candies = this.get('candies')
-            candies.set('count', candies.get('count') + response.candies)
+
+            candies.set('count', candies.get('count') + response.data.candies)
 
             this.collection.remove(this)
 
