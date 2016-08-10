@@ -57,9 +57,23 @@
 
 <menu type="toolbar">
   <div class="primary">
-    {{toPowerUp.candy}} | {{toPowerUp.stardust}}
-    <button {{#unless canPowerUp}}disabled{{/unless}} name="power-up" title="Power Up" type="button"><i class="fa fa-bolt fa-fw"></i></button>
-    {{#if toEvolve}}<button {{#unless canEvolve}}disabled{{/unless}} name="evolve" title="Evolve ({{toEvolve}})" type="button"><i class="fa fa-level-up fa-fw"></i></button>{{/if}}
+    <button
+            {{#unless canPowerUp}}disabled{{/unless}}
+            name="power-up"
+            title="{{#if canPowerUp}}Power Up ({{toPowerUp.candy}} candy | {{toPowerUp.stardust}} stardust){{else}}Not enough candy or stardust{{/if}}"
+            type="button">
+      <i class="fa fa-bolt fa-fw"></i>
+    </button>
+
+    {{#if toEvolve}}
+      <button
+              {{#unless canEvolve}}disabled{{/unless}}
+              name="evolve"
+              title="{{#if canEvolve}}Evolve ({{toEvolve.candy}} candy){{else}}Not enough candy{{/if}}"
+              type="button">
+        <i class="fa fa-level-up fa-fw"></i>
+      </button>
+    {{/if}}
 
     <span>{{candyCount}} candies</span>
   </div>

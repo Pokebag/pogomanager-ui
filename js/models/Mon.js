@@ -58,11 +58,16 @@ export default class Mon extends BaseModel {
   }
 
   _setCanEvolve () {
-    this.set('canEvolve', this.get('toEvolve') <= this.get('candies').get('count'))
+    this.set('canEvolve', this.get('toEvolve').candy <= this.get('candies').get('count'))
   }
 
   _setCanPowerUp () {
-//    this.set('canEvolve', this.get('toPowerUp') <= this.get('candies').get('count'))
+    let toPowerUp = this.get('toPowerUp')
+
+    let hasEnoughCandy = this.get('candies').get('count') >= toPowerUp.candy
+    let hasEnoughStardust = true
+
+    this.set('canPowerUp', hasEnoughCandy && hasEnoughStardust)
   }
 
   _setDisplayName () {
@@ -272,6 +277,8 @@ export default class Mon extends BaseModel {
       poweringUp: false,
       sprite: '//pokeapi.co/media/sprites/pokemon/132.png',
       stamina: 9001,
+      toEvolve: {},
+      toPowerUp: {},
       transferring: false,
       upgrades: 0
     }
