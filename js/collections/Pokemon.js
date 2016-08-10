@@ -16,7 +16,7 @@ export default class Pokemon extends BaseCollection {
 
   comparator (mon0, mon1) {
     let no = [mon0.get('no'), mon1.get('no')]
-    let cp = [mon0.get('stats').cp, mon1.get('stats').cp]
+    let cp = [mon0.get('cp'), mon1.get('cp')]
 
     if (no[0] > no[1]) {
       return 1
