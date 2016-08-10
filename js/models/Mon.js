@@ -58,7 +58,9 @@ export default class Mon extends BaseModel {
   }
 
   _setCanEvolve () {
-    this.set('canEvolve', this.get('toEvolve').candy <= this.get('candies').get('count'))
+    let toEvolve = this.get('toEvolve')
+
+    this.set('canEvolve', toEvolve && toEvolve.candy <= this.get('candies').get('count'))
   }
 
   _setCanPowerUp () {
@@ -151,7 +153,10 @@ export default class Mon extends BaseModel {
           success: (response, status, xhr) => {
             let candies = this.get('candies')
 
-            candies.set('count', candies.get('count') + response.data.candies)
+            let toEvolve = this.get('toEvolve')
+            let candiesToEvolve = toEvolve.candy || 0
+
+            candies.set('count', candies.get('count') - candiesToEvolve + response.data.candies)
 
             this.set(response.data.pokemon)
             this.collection.sort()
@@ -283,8 +288,6 @@ export default class Mon extends BaseModel {
       poweringUp: false,
       sprite: '//pokeapi.co/media/sprites/pokemon/132.png',
       stamina: 9001,
-      toEvolve: {},
-      toPowerUp: {},
       transferring: false,
       upgrades: 0
     }
