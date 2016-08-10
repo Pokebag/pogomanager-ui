@@ -58,6 +58,7 @@ export default class Dialog extends Backbone.Marionette.ItemView {
     this.model.set(options)
     this.render()
     this.el.showModal()
+    this.ui.confirm.focus()
 
     return new Promise((resolve, reject) => {
       this.once('close', resolve)
@@ -92,6 +93,12 @@ export default class Dialog extends Backbone.Marionette.ItemView {
     return 'dialog'
   }
 
+  get ui () {
+    return this._ui || (this._ui = {
+      'confirm': 'button[name=confirm]'
+    })
+  }
+
 
 
 
@@ -106,5 +113,9 @@ export default class Dialog extends Backbone.Marionette.ItemView {
 
   set model (value) {
     this._model = value
+  }
+
+  set ui (value) {
+    this._ui = value
   }
 }
