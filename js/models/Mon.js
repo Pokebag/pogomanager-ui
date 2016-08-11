@@ -8,6 +8,12 @@ import BaseModel from 'models/Base'
 
 
 
+let ratings = ['useless', 'poor', 'average', 'good', 'great', 'excellent']
+
+
+
+
+
 export default class Mon extends BaseModel {
 
   /******************************************************************************\
@@ -53,6 +59,13 @@ export default class Mon extends BaseModel {
 //    })
   }
 
+  _setAttackPerfection () {
+    let attackIV = this.get('stats').iv.attack
+    let perfection = ((attackIV / 15) * 100).toPrecision(3)
+
+    this.set('attackPerfection', perfection)
+  }
+
   _setCandyCount () {
     this.set('candyCount', this.get('candies').get('count'))
   }
@@ -70,6 +83,13 @@ export default class Mon extends BaseModel {
     let hasEnoughStardust = true
 
     this.set('canPowerUp', hasEnoughCandy && hasEnoughStardust)
+  }
+
+  _setDefensePerfection () {
+    let defenseIV = this.get('stats').iv.defense
+    let perfection = ((defenseIV / 15) * 100).toPrecision(3)
+
+    this.set('defensePerfection', perfection)
   }
 
   _setDisplayName () {
@@ -98,20 +118,18 @@ export default class Mon extends BaseModel {
     let perfection = ((totalIV / 45) * 100).toPrecision(3)
 
     this.set('perfection', perfection)
+    this._setRating()
   }
 
-  _setAttackPerfection () {
-    let attackIV = this.get('stats').iv.attack
-    let perfection = ((attackIV / 15) * 100).toPrecision(3)
+  _setRating () {
+    let perfection = this.get('perfection')
+    let rating = ratings[Math.ceil((perfection / 100) * ratings.length) - 1]
 
-    this.set('attackPerfection', perfection)
+    this.set('rating', rating)
   }
 
-  _setDefensePerfection () {
-    let defenseIV = this.get('stats').iv.defense
-    let perfection = ((defenseIV / 15) * 100).toPrecision(3)
-
-    this.set('defensePerfection', perfection)
+  _setSprite () {
+    this.set('sprite', '//assets.pokemon.com/assets/cms2/img/pokedex/detail/' + (this.get('displayNo') || 132) + '.png')
   }
 
   _setStaminaPerfection () {
@@ -119,10 +137,6 @@ export default class Mon extends BaseModel {
     let perfection = ((staminaIV / 15) * 100).toPrecision(3)
 
     this.set('staminaPerfection', perfection)
-  }
-
-  _setSprite () {
-    this.set('sprite', '//assets.pokemon.com/assets/cms2/img/pokedex/detail/' + (this.get('displayNo') || 132) + '.png')
   }
 
   _setStats () {
@@ -300,6 +314,7 @@ export default class Mon extends BaseModel {
       no: 132,
       pokedex: null,
       poweringUp: false,
+      rating: ratings[0],
       sprite: '//pokeapi.co/media/sprites/pokemon/132.png',
       stamina: 9001,
       transferring: false,
