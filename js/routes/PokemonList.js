@@ -39,7 +39,7 @@ export default class PokemonList extends Route {
   }
 
   get title () {
-    return 'Pokemon'
+    return 'Pok&eacute;mon'
   }
 
   get view () {
