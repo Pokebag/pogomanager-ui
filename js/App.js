@@ -3,10 +3,10 @@ import Rafael from 'rafael'
 
 import Router from './Router'
 import Routes from './Routes'
-import RootView from 'views/Root'
+import RootView from './views/Root'
 
-import Pokedex from 'collections/Pokedex'
-import UserModel from 'models/User'
+import Pokedex from './collections/Pokedex'
+import UserModel from './models/User'
 
 
 

@@ -1,7 +1,7 @@
 import _ from 'underscore'
 
-import BaseCollection from 'collections/Base'
-import Blog from 'models/Blog'
+import BaseCollection from './Base'
+import Blog from './models/Blog'
 
 
 

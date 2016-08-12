@@ -1,8 +1,8 @@
 import _ from 'underscore'
 
 import Backbone from 'backbone'
-import BaseCollection from 'collections/Base'
-import Mon from 'models/Mon'
+import BaseCollection from './Base'
+import Mon from '../models/Mon'
 
 
 

@@ -1,6 +1,6 @@
-import BaseModel from 'models/Base'
-import CandiesCollection from 'collections/Candies'
-import PokemonCollection from 'collections/Pokemon'
+import BaseModel from './Base'
+import CandiesCollection from '../collections/Candies'
+import PokemonCollection from '../collections/Pokemon'
 
 
 

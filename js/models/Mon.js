@@ -1,8 +1,7 @@
 import Backbone from 'backbone'
-import marked from 'marked'
 import moment from 'moment'
 
-import BaseModel from 'models/Base'
+import BaseModel from './Base'
 
 
 

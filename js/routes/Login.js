@@ -1,5 +1,5 @@
 import Route from '../Route'
-import LoginView from 'views/Login'
+import LoginView from '../views/Login'
 
 
 

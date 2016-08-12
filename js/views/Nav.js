@@ -1,6 +1,7 @@
 import Backbone from 'backbone'
+import Hendlebars from 'handlebars'
 
-import template from 'templates/Nav.hbs'
+import template from '../templates/Nav.hbs'
 
 
 

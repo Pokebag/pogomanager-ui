@@ -1,7 +1,8 @@
 import Backbone from 'backbone'
+import Handlebars from 'handlebars'
 
-import template from 'templates/PokemonList.hbs'
-import PokemonListItemView from 'views/PokemonListItem'
+import template from '../templates/PokemonList.hbs'
+import PokemonListItemView from '../views/PokemonListItem'
 
 
 

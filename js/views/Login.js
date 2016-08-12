@@ -1,6 +1,7 @@
 import Backbone from 'backbone'
+import Handlebars from 'handlebars'
 
-import template from 'templates/Login.hbs'
+import template from '../templates/Login.hbs'
 
 
 

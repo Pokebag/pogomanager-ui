@@ -1,5 +1,5 @@
 import Route from '../Route'
-import PokemonListView from 'views/PokemonList'
+import PokemonListView from '../views/PokemonList'
 
 
 

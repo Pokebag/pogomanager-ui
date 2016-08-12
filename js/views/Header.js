@@ -1,7 +1,8 @@
 import Backbone from 'backbone'
+import Handlebars from 'handlebars'
 
-import NavView from 'views/Nav'
-import template from 'templates/Header.hbs'
+import NavView from '../views/Nav'
+import template from '../templates/Header.hbs'
 
 
 

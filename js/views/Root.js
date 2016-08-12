@@ -1,8 +1,9 @@
 import Backbone from 'backbone'
+import Handlebars from 'handlebars'
 
-import DialogView from 'views/Dialog'
-import HeaderView from 'views/Header'
-import template from 'templates/Root.hbs'
+import DialogView from '../views/Dialog'
+import HeaderView from '../views/Header'
+import template from '../templates/Root.hbs'
 
 
 
@@ -13,6 +14,14 @@ export default class Root extends Backbone.Marionette.LayoutView {
   /******************************************************************************\
     Public Methods
   \******************************************************************************/
+
+  constructor (options) {
+    options = _.extend(options || {}, {
+      template: template
+    })
+
+    super(options)
+  }
 
   initialize () {
     this.render()

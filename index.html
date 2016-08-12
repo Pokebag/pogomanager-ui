@@ -1,17 +1,33 @@
 <!doctype html>
 
 <head>
-  <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id" content="630070412872-isjkc1tg3llpabbok1mkugg184i815tn.apps.googleusercontent.com">
+  <title>Pok&eacute;bag</title>
 
-  <title>Trezy.com</title>
+<!--  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">-->
+  <link rel="stylesheet" href="dist/lib.css">
+  <link rel="stylesheet" href="dist/app.css">
 
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/dist/lib.css">
-  <link rel="stylesheet" href="/dist/app.css">
+<!--  <script src="//apis.google.com/js/api.js"></script>-->
 
-  <script src="//apis.google.com/js/api.js"></script>
-  <script async defer src="/dist/app.js"></script>
+
+  <script>
+    require('babel-register')
+
+    const $ = require('jquery')
+    const _ = require('underscore')
+    const Backbone = require('backbone')
+
+    require('backbone.base-router')
+    require('backbone.hoard')
+    require('backbone.intercept')
+    require('backbone.marionette')
+    require('backbone.radio')
+    require('backbone.stickit')
+    require('./js/shims/backbone.radio')
+    require('./js/shims/marionette.replaceElement')
+
+    require('./js/bootstrap')
+  </script>
 </head>
 
 <body role="application"></body>

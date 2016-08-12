@@ -1,7 +1,7 @@
 import _ from 'underscore'
 
 import Backbone from 'backbone'
-import BaseCollection from 'collections/Base'
+import BaseCollection from './Base'
 
 
 
