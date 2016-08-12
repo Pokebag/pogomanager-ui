@@ -1,5 +1,5 @@
 module.exports = {
   app: [
-    'dist'
+    './app/css'
   ]
 }

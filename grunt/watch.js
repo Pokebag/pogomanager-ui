@@ -1,53 +1,33 @@
 module.exports = {
   options: {
     interrupt: true,
-    livereload: true,
     spawn: true
-  },
-
-  appJS: {
-    files: [
-      'bower.json',
-      'config.json',
-      'package.json',
-      'js/**/*.js',
-      'templates/**/*.hbs'
-    ],
-    tasks: [
-      'buildJS'
-    ]
   },
 
   appCSS: {
     files: [
-      'scss/**/*.scss',
-      '!scss/_animations.scss',
-      '!scss/_colors.scss',
-      '!scss/_components.scss',
-      '!scss/_core.scss',
-      '!scss/_fonts.scss',
-      '!scss/_helpers.scss',
-      '!scss/_mixins.scss',
-      '!scss/_variables.scss',
-      '!scss/lib.scss'
+      './app/scss/**/*.scss',
+      '!./app/scss/_animations.scss',
+      '!./app/scss/_colors.scss',
+      '!./app/scss/_components.scss',
+      '!./app/scss/_core.scss',
+      '!./app/scss/_fonts.scss',
+      '!./app/scss/_helpers.scss',
+      '!./app/scss/_mixins.scss',
+      '!./app/scss/_variables.scss',
+      '!./app/scss/lib.scss'
     ],
     tasks: [
       'buildAppCSS'
-    ],
-    options: {
-      livereload: true
-    }
+    ]
   },
 
   libCSS: {
     files: [
-      'scss/lib.scss'
+      './app/scss/lib.scss'
     ],
     tasks: [
       'buildLibCSS'
-    ],
-    options: {
-      livereload: true
-    }
+    ]
   }
 }

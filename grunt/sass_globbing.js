@@ -1,14 +1,14 @@
 module.exports = {
   app: {
     files: {
-      'scss/_animations.scss': 'scss/animations/**/*.scss',
-      'scss/_colors.scss': 'scss/colors/**/*.scss',
-      'scss/_components.scss': 'scss/components/**/*.scss',
-      'scss/_core.scss': 'scss/core/**/*.scss',
-      'scss/_fonts.scss': 'scss/fonts/**/*.scss',
-      'scss/_helpers.scss': 'scss/helpers/**/*.scss',
-      'scss/_mixins.scss': 'scss/mixins/**/*.scss',
-      'scss/_variables.scss': 'scss/variables/**/*.scss'
+      './app/scss/_animations.scss': './app/scss/animations/**/*.scss',
+      './app/scss/_colors.scss': './app/scss/colors/**/*.scss',
+      './app/scss/_components.scss': './app/scss/components/**/*.scss',
+      './app/scss/_core.scss': './app/scss/core/**/*.scss',
+      './app/scss/_fonts.scss': './app/scss/fonts/**/*.scss',
+      './app/scss/_helpers.scss': './app/scss/helpers/**/*.scss',
+      './app/scss/_mixins.scss': './app/scss/mixins/**/*.scss',
+      './app/scss/_variables.scss': './app/scss/variables/**/*.scss'
     },
     options: {
       signature: false,

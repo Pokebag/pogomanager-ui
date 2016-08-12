@@ -5,7 +5,7 @@ module.exports = {
     },
 
     files: {
-      'dist/app.css': 'scss/app.scss'
+      './app/css/app.css': './app/scss/app.scss'
     }
   },
 
@@ -15,7 +15,7 @@ module.exports = {
     },
 
     files: {
-      'dist/lib.css': 'scss/lib.scss'
+      './app/css/lib.css': './app/scss/lib.scss'
     }
   }
 }

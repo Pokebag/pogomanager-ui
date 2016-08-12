@@ -1,18 +1,12 @@
 module.exports = {
   default: [
     'build',
-    'server',
     'watch'
   ],
 
   build: [
     'clean',
-    'buildCSS',
-    'buildJS'
-  ],
-
-  buildJS: [
-    'webpack'
+    'buildCSS'
   ],
 
   buildCSS: [
@@ -31,13 +25,6 @@ module.exports = {
 
   dist: [
     'build',
-    'cssmin',
-    'uglify',
-    'server'
-  ],
-
-  server: [
-    'configureProxies:app',
-    'connect'
+    'cssmin'
   ]
 }

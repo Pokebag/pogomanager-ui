@@ -1,0 +1,540 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+@font-face {
+  font-family: 'Pokemon';
+  src: url("../assets/pokemon/pokemon_solid-webfont.eot");
+  src: url("../assets/pokemon/pokemon_solid-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/pokemon/pokemon_solid-webfont.woff2") format("woff2"), url("../assets/pokemon/pokemon_solid-webfont.woff") format("woff"), url("../assets/pokemon/pokemon_solid-webfont.ttf") format("truetype"), url("../assets/pokemon/pokemon_solid-webfont.svg#pokemon_solidnormal") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-overflow: ellipsis; }
+
+html, body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100vw; }
+
+html {
+  font-size: 10px; }
+
+body {
+  align-content: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 2; }
+
+@keyframes error-start {
+  0% {
+    border-bottom-color: currentColor;
+    border-left-color: currentColor;
+    border-right-color: currentColor;
+    border-top-color: currentColor;
+    transform: rotate(0deg); }
+  100% {
+    border-bottom-color: transparent;
+    border-left-color: currentColor;
+    border-right-color: currentColor;
+    border-top-color: transparent;
+    transform: rotate(405deg); } }
+
+@keyframes error {
+  0% {
+    border-bottom-color: transparent;
+    border-left-color: currentColor;
+    border-right-color: currentColor;
+    border-top-color: transparent; }
+  50% {
+    border-bottom-color: currentColor;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: currentColor; }
+  100% {
+    border-bottom-color: transparent;
+    border-left-color: currentColor;
+    border-right-color: currentColor;
+    border-top-color: transparent; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes loading-start {
+  0% {
+    border-bottom-color: currentColor;
+    border-left-color: currentColor;
+    border-right-color: currentColor;
+    border-top-color: currentColor; }
+  100% {
+    border-bottom-color: currentColor;
+    border-left-color: currentColor;
+    border-right-color: currentColor;
+    border-top-color: transparent; } }
+
+@keyframes loading {
+  0% {
+    border-bottom-color: currentColor;
+    border-left-color: currentColor;
+    border-right-color: currentColor;
+    border-top-color: transparent; }
+  25% {
+    border-bottom-color: currentColor;
+    border-left-color: currentColor;
+    border-right-color: transparent;
+    border-top-color: currentColor; }
+  50% {
+    border-bottom-color: transparent;
+    border-left-color: currentColor;
+    border-right-color: currentColor;
+    border-top-color: currentColor; }
+  75% {
+    border-bottom-color: currentColor;
+    border-left-color: transparent;
+    border-right-color: currentColor;
+    border-top-color: currentColor; }
+  100% {
+    border-bottom-color: currentColor;
+    border-left-color: currentColor;
+    border-right-color: currentColor;
+    border-top-color: transparent; } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.text-muted {
+  color: darkgrey; }
+
+header[role=banner] {
+  align-items: center;
+  color: black;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  overflow: scroll;
+  text-align: center; }
+  header[role=banner] .brand {
+    font-family: Pokemon;
+    font-size: 3em;
+    line-height: 1;
+    margin: 2rem 0; }
+  header[role=banner] nav {
+    display: flex;
+    overflow: hidden;
+    position: relative; }
+    header[role=banner] nav ul {
+      align-content: stretch;
+      display: flex;
+      margin-bottom: 0; }
+    header[role=banner] nav li:last-of-type {
+      margin: 0; }
+    header[role=banner] nav a,
+    header[role=banner] nav label {
+      color: inherit;
+      cursor: pointer;
+      display: block;
+      outline: none;
+      padding: 2rem;
+      text-decoration: none;
+      transition: all 0.2s; }
+      header[role=banner] nav a:focus, header[role=banner] nav a:hover,
+      header[role=banner] nav label:focus,
+      header[role=banner] nav label:hover {
+        background-color: black;
+        color: white; }
+    header[role=banner] nav input[type=checkbox][data-subnav] {
+      display: none; }
+      header[role=banner] nav input[type=checkbox][data-subnav]:not(:checked) + [data-subnav] {
+        left: 100%; }
+      header[role=banner] nav input[type=checkbox][data-subnav] + [data-subnav] {
+        background-color: white;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: left 0.5s;
+        width: 100%; }
+
+.card {
+  align-items: center;
+  animation-duration: 0.5s;
+  animation-name: fade-in;
+  border: 1px solid black;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative; }
+  .card header {
+    display: flex;
+    position: relative;
+    width: 100%; }
+    .card header .no {
+      background-color: black;
+      color: white;
+      margin-right: 0.5rem;
+      padding: 0 0.5rem; }
+    .card header .cp {
+      padding: 0 0.5rem;
+      position: absolute;
+      right: 0;
+      top: 0; }
+  .card menu {
+    border-top: 1px solid black;
+    width: 100%; }
+  .card .perfect {
+    color: lawngreen; }
+
+.error:empty {
+  position: relative; }
+  .error:empty:after, .error:empty:before {
+    align-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 0.3rem;
+    color: red;
+    display: flex;
+    height: 10rem;
+    justify-content: center;
+    left: 50%;
+    margin-left: -5rem;
+    margin-top: -5rem;
+    position: absolute;
+    top: 50%;
+    width: 10rem; }
+  .error:empty:after {
+    animation-delay: 0s, 0.5s;
+    animation-duration: 0.5s, 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1, infinite;
+    animation-name: error-start, error;
+    animation-timing-function: ease, linear;
+    border-color: currentColor;
+    content: ''; }
+  .error:empty:before {
+    animation-duration: 0.5s;
+    animation-name: spin;
+    border-color: transparent;
+    content: 'Error'; }
+
+.loading:empty {
+  align-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0; }
+  .loading:empty:after, .loading:empty:before {
+    align-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 0.3rem;
+    color: black;
+    display: flex;
+    height: 10rem;
+    justify-content: center;
+    left: 50%;
+    margin-left: -5rem;
+    margin-top: -5rem;
+    position: absolute;
+    top: 50%;
+    width: 10rem; }
+  .loading:empty:after {
+    animation-delay: 0s, 1s;
+    animation-duration: 1s, 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1, infinite;
+    animation-name: loading-start, loading;
+    border-color: currentColor;
+    content: ''; }
+  .loading:empty:before {
+    border-color: transparent;
+    content: 'Loading';
+    content: attr(data-loading-text); }
+
+.move {
+  display: flex;
+  padding: 1rem;
+  width: 100%; }
+  .move .name {
+    flex-grow: 1; }
+  .move .damage {
+    flex-grow: 0; }
+
+.pokemon {
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  margin: 1rem; }
+  .pokemon header {
+    background-color: #ce3724; }
+  .pokemon .hp, .pokemon .iv {
+    background-color: #f1f1f1; }
+
+a:active, a:link, a:visited {
+  color: blue; }
+
+a:focus, a:hover {
+  color: red;
+  outline: none; }
+
+abbr {
+  border-bottom-color: black;
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+  cursor: help; }
+
+article {
+  line-height: 2.5; }
+
+button {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  margin: 0;
+  outline: none;
+  padding: 1rem;
+  transition: all 0.2s;
+  white-space: nowrap; }
+  button:not([disabled]):hover {
+    background-color: black;
+    color: white; }
+  button[disabled] {
+    cursor: default; }
+
+dialog {
+  border: 10px solid black;
+  bottom: 0;
+  flex-direction: column;
+  left: 0;
+  margin: auto;
+  min-width: 50vw;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0; }
+  dialog[open] {
+    display: flex; }
+  dialog::backdrop {
+    background-color: rgba(255, 255, 255, 0.8);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0; }
+  dialog header, dialog .content {
+    padding: 1rem; }
+  dialog header h1 {
+    margin: 0; }
+  dialog .content {
+    flex-grow: 1; }
+
+dl {
+  padding: 1rem;
+  width: 100%; }
+
+dd:after {
+  content: '\A'; }
+
+em {
+  font-style: italic; }
+
+figure {
+  border: 1px dotted black;
+  margin: 1rem;
+  padding: 1rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 2rem; }
+
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.6em; }
+
+h3 {
+  font-size: 1.4em; }
+
+h4 {
+  font-size: 1.4em; }
+
+h5 {
+  font-size: 1.2em; }
+
+h6 {
+  font-size: 1em; }
+
+hr {
+  background-color: black;
+  border: none;
+  height: 1px; }
+
+img {
+  max-width: 100%; }
+
+input {
+  border: 1px solid black;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none; }
+
+main {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: scroll;
+  padding: 2rem;
+  position: relative !important; }
+
+menu {
+  display: flex;
+  justify-content: space-between; }
+  menu .primary,
+  menu .secondary {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1; }
+  menu .primary + .secondary,
+  menu .secondary + .primary {
+    justify-content: flex-end; }
+
+meter {
+  -webkit-appearance: none;
+  height: 0.3rem;
+  width: 100%; }
+  meter::-webkit-meter-bar {
+    background-color: lightgrey;
+    background-image: none; }
+  meter::-webkit-meter-optimum-value {
+    background-color: green;
+    background-image: none; }
+  meter:before {
+    color: grey;
+    content: attr(value) " / " attr(max) " HP";
+    font-size: 0.8em;
+    margin: 0 0.5rem;
+    position: absolute;
+    right: 0; }
+
+nav ol, nav ul {
+  list-style: none;
+  padding-left: 0; }
+
+ol {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0;
+  width: 100%; }
+  ol.grid {
+    display: flex;
+    flex-wrap: wrap; }
+    ol.grid > * {
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 1;
+      min-width: 20rem; }
+
+p {
+  margin-bottom: 2rem; }
+
+[data-placeholder]:empty:before {
+  content: attr(data-placeholder); }
+
+::-webkit-input-placeholder,
+[data-placeholder]:empty:before {
+  color: darkgray; }
+
+small {
+  color: #aaa;
+  font-size: 0.6em; }
+
+strong {
+  font-weight: bold; }
+
+table {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  width: 100%; }
+  table thead {
+    border-bottom: 1px solid black;
+    font-weight: bold; }
+  table th, table td {
+    text-align: center;
+    width: calc(100% / 3); }
+  table th {
+    font-weight: bold; }
+
+ul {
+  list-style-type: square;
+  margin-bottom: 2rem;
+  padding-left: 3rem; }

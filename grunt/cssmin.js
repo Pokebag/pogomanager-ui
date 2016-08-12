@@ -5,8 +5,8 @@ module.exports = {
 
   all: {
     files: {
-      'dist/app.css': 'dist/app.css',
-      'dist/lib.css': 'dist/lib.css'
+      './app/css/app.css': './app/css/app.css',
+      './app/css/lib.css': './app/css/lib.css'
     }
   }
 }
