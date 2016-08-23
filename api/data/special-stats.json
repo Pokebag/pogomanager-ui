@@ -1,0 +1,756 @@
+[{
+  "no": 1,
+  "specialAttack": 65,
+  "specialDefense": 65,
+  "speed": 45
+}, {
+  "no": 2,
+  "specialAttack": 80,
+  "specialDefense": 80,
+  "speed": 60
+}, {
+  "no": 3,
+  "specialAttack": 100,
+  "specialDefense": 100,
+  "speed": 80
+}, {
+  "no": 4,
+  "specialAttack": 60,
+  "specialDefense": 50,
+  "speed": 65
+}, {
+  "no": 5,
+  "specialAttack": 80,
+  "specialDefense": 65,
+  "speed": 80
+}, {
+  "no": 6,
+  "specialAttack": 109,
+  "specialDefense": 85,
+  "speed": 100
+}, {
+  "no": 7,
+  "specialAttack": 50,
+  "specialDefense": 64,
+  "speed": 43
+}, {
+  "no": 8,
+  "specialAttack": 65,
+  "specialDefense": 80,
+  "speed": 58
+}, {
+  "no": 9,
+  "specialAttack": 85,
+  "specialDefense": 105,
+  "speed": 78
+}, {
+  "no": 10,
+  "specialAttack": 20,
+  "specialDefense": 20,
+  "speed": 45
+}, {
+  "no": 11,
+  "specialAttack": 25,
+  "specialDefense": 25,
+  "speed": 30
+}, {
+  "no": 12,
+  "specialAttack": 90,
+  "specialDefense": 80,
+  "speed": 70
+}, {
+  "no": 13,
+  "specialAttack": 20,
+  "specialDefense": 20,
+  "speed": 50
+}, {
+  "no": 14,
+  "specialAttack": 25,
+  "specialDefense": 25,
+  "speed": 35
+}, {
+  "no": 15,
+  "specialAttack": 45,
+  "specialDefense": 80,
+  "speed": 75
+}, {
+  "no": 16,
+  "specialAttack": 35,
+  "specialDefense": 35,
+  "speed": 56
+}, {
+  "no": 17,
+  "specialAttack": 50,
+  "specialDefense": 50,
+  "speed": 71
+}, {
+  "no": 18,
+  "specialAttack": 70,
+  "specialDefense": 70,
+  "speed": 101
+}, {
+  "no": 19,
+  "specialAttack": 25,
+  "specialDefense": 35,
+  "speed": 72
+}, {
+  "no": 20,
+  "specialAttack": 50,
+  "specialDefense": 70,
+  "speed": 97
+}, {
+  "no": 21,
+  "specialAttack": 31,
+  "specialDefense": 31,
+  "speed": 70
+}, {
+  "no": 22,
+  "specialAttack": 61,
+  "specialDefense": 61,
+  "speed": 100
+}, {
+  "no": 23,
+  "specialAttack": 40,
+  "specialDefense": 54,
+  "speed": 55
+}, {
+  "no": 24,
+  "specialAttack": 65,
+  "specialDefense": 79,
+  "speed": 80
+}, {
+  "no": 25,
+  "specialAttack": 50,
+  "specialDefense": 50,
+  "speed": 90
+}, {
+  "no": 26,
+  "specialAttack": 90,
+  "specialDefense": 80,
+  "speed": 110
+}, {
+  "no": 27,
+  "specialAttack": 20,
+  "specialDefense": 30,
+  "speed": 40
+}, {
+  "no": 28,
+  "specialAttack": 45,
+  "specialDefense": 55,
+  "speed": 65
+}, {
+  "no": 29,
+  "specialAttack": 40,
+  "specialDefense": 40,
+  "speed": 41
+}, {
+  "no": 30,
+  "specialAttack": 55,
+  "specialDefense": 55,
+  "speed": 56
+}, {
+  "no": 31,
+  "specialAttack": 75,
+  "specialDefense": 85,
+  "speed": 76
+}, {
+  "no": 32,
+  "specialAttack": 40,
+  "specialDefense": 40,
+  "speed": 50
+}, {
+  "no": 33,
+  "specialAttack": 55,
+  "specialDefense": 55,
+  "speed": 65
+}, {
+  "no": 34,
+  "specialAttack": 85,
+  "specialDefense": 75,
+  "speed": 85
+}, {
+  "no": 35,
+  "specialAttack": 60,
+  "specialDefense": 65,
+  "speed": 35
+}, {
+  "no": 36,
+  "specialAttack": 95,
+  "specialDefense": 90,
+  "speed": 60
+}, {
+  "no": 37,
+  "specialAttack": 50,
+  "specialDefense": 65,
+  "speed": 65
+}, {
+  "no": 38,
+  "specialAttack": 81,
+  "specialDefense": 100,
+  "speed": 100
+}, {
+  "no": 39,
+  "specialAttack": 45,
+  "specialDefense": 25,
+  "speed": 20
+}, {
+  "no": 40,
+  "specialAttack": 85,
+  "specialDefense": 50,
+  "speed": 45
+}, {
+  "no": 41,
+  "specialAttack": 30,
+  "specialDefense": 40,
+  "speed": 55
+}, {
+  "no": 42,
+  "specialAttack": 65,
+  "specialDefense": 75,
+  "speed": 90
+}, {
+  "no": 43,
+  "specialAttack": 75,
+  "specialDefense": 65,
+  "speed": 30
+}, {
+  "no": 44,
+  "specialAttack": 85,
+  "specialDefense": 75,
+  "speed": 40
+}, {
+  "no": 45,
+  "specialAttack": 110,
+  "specialDefense": 90,
+  "speed": 50
+}, {
+  "no": 46,
+  "specialAttack": 45,
+  "specialDefense": 55,
+  "speed": 25
+}, {
+  "no": 47,
+  "specialAttack": 60,
+  "specialDefense": 80,
+  "speed": 30
+}, {
+  "no": 48,
+  "specialAttack": 40,
+  "specialDefense": 55,
+  "speed": 45
+}, {
+  "no": 49,
+  "specialAttack": 90,
+  "specialDefense": 75,
+  "speed": 90
+}, {
+  "no": 50,
+  "specialAttack": 35,
+  "specialDefense": 45,
+  "speed": 95
+}, {
+  "no": 51,
+  "specialAttack": 50,
+  "specialDefense": 70,
+  "speed": 120
+}, {
+  "no": 52,
+  "specialAttack": 40,
+  "specialDefense": 40,
+  "speed": 90
+}, {
+  "no": 53,
+  "specialAttack": 65,
+  "specialDefense": 65,
+  "speed": 115
+}, {
+  "no": 54,
+  "specialAttack": 65,
+  "specialDefense": 50,
+  "speed": 55
+}, {
+  "no": 55,
+  "specialAttack": 95,
+  "specialDefense": 80,
+  "speed": 85
+}, {
+  "no": 56,
+  "specialAttack": 35,
+  "specialDefense": 45,
+  "speed": 70
+}, {
+  "no": 57,
+  "specialAttack": 60,
+  "specialDefense": 70,
+  "speed": 95
+}, {
+  "no": 58,
+  "specialAttack": 70,
+  "specialDefense": 50,
+  "speed": 60
+}, {
+  "no": 59,
+  "specialAttack": 100,
+  "specialDefense": 80,
+  "speed": 95
+}, {
+  "no": 60,
+  "specialAttack": 40,
+  "specialDefense": 40,
+  "speed": 90
+}, {
+  "no": 61,
+  "specialAttack": 50,
+  "specialDefense": 50,
+  "speed": 90
+}, {
+  "no": 62,
+  "specialAttack": 70,
+  "specialDefense": 90,
+  "speed": 70
+}, {
+  "no": 63,
+  "specialAttack": 105,
+  "specialDefense": 55,
+  "speed": 90
+}, {
+  "no": 64,
+  "specialAttack": 120,
+  "specialDefense": 70,
+  "speed": 105
+}, {
+  "no": 65,
+  "specialAttack": 135,
+  "specialDefense": 95,
+  "speed": 120
+}, {
+  "no": 66,
+  "specialAttack": 35,
+  "specialDefense": 35,
+  "speed": 35
+}, {
+  "no": 67,
+  "specialAttack": 50,
+  "specialDefense": 60,
+  "speed": 45
+}, {
+  "no": 68,
+  "specialAttack": 65,
+  "specialDefense": 85,
+  "speed": 55
+}, {
+  "no": 69,
+  "specialAttack": 70,
+  "specialDefense": 30,
+  "speed": 40
+}, {
+  "no": 70,
+  "specialAttack": 85,
+  "specialDefense": 45,
+  "speed": 55
+}, {
+  "no": 71,
+  "specialAttack": 100,
+  "specialDefense": 70,
+  "speed": 70
+}, {
+  "no": 72,
+  "specialAttack": 50,
+  "specialDefense": 100,
+  "speed": 70
+}, {
+  "no": 73,
+  "specialAttack": 80,
+  "specialDefense": 120,
+  "speed": 100
+}, {
+  "no": 74,
+  "specialAttack": 30,
+  "specialDefense": 30,
+  "speed": 20
+}, {
+  "no": 75,
+  "specialAttack": 45,
+  "specialDefense": 45,
+  "speed": 35
+}, {
+  "no": 76,
+  "specialAttack": 55,
+  "specialDefense": 65,
+  "speed": 45
+}, {
+  "no": 77,
+  "specialAttack": 65,
+  "specialDefense": 65,
+  "speed": 90
+}, {
+  "no": 78,
+  "specialAttack": 80,
+  "specialDefense": 80,
+  "speed": 105
+}, {
+  "no": 79,
+  "specialAttack": 40,
+  "specialDefense": 40,
+  "speed": 15
+}, {
+  "no": 80,
+  "specialAttack": 100,
+  "specialDefense": 80,
+  "speed": 30
+}, {
+  "no": 81,
+  "specialAttack": 95,
+  "specialDefense": 55,
+  "speed": 45
+}, {
+  "no": 82,
+  "specialAttack": 120,
+  "specialDefense": 70,
+  "speed": 70
+}, {
+  "no": 83,
+  "specialAttack": 58,
+  "specialDefense": 62,
+  "speed": 60
+}, {
+  "no": 84,
+  "specialAttack": 35,
+  "specialDefense": 35,
+  "speed": 75
+}, {
+  "no": 85,
+  "specialAttack": 60,
+  "specialDefense": 60,
+  "speed": 100
+}, {
+  "no": 86,
+  "specialAttack": 45,
+  "specialDefense": 70,
+  "speed": 45
+}, {
+  "no": 87,
+  "specialAttack": 70,
+  "specialDefense": 95,
+  "speed": 70
+}, {
+  "no": 88,
+  "specialAttack": 40,
+  "specialDefense": 50,
+  "speed": 25
+}, {
+  "no": 89,
+  "specialAttack": 65,
+  "specialDefense": 100,
+  "speed": 50
+}, {
+  "no": 90,
+  "specialAttack": 45,
+  "specialDefense": 25,
+  "speed": 40
+}, {
+  "no": 91,
+  "specialAttack": 85,
+  "specialDefense": 45,
+  "speed": 70
+}, {
+  "no": 92,
+  "specialAttack": 100,
+  "specialDefense": 35,
+  "speed": 80
+}, {
+  "no": 93,
+  "specialAttack": 115,
+  "specialDefense": 55,
+  "speed": 95
+}, {
+  "no": 94,
+  "specialAttack": 130,
+  "specialDefense": 75,
+  "speed": 110
+}, {
+  "no": 95,
+  "specialAttack": 30,
+  "specialDefense": 45,
+  "speed": 70
+}, {
+  "no": 96,
+  "specialAttack": 43,
+  "specialDefense": 90,
+  "speed": 42
+}, {
+  "no": 97,
+  "specialAttack": 73,
+  "specialDefense": 115,
+  "speed": 67
+}, {
+  "no": 98,
+  "specialAttack": 25,
+  "specialDefense": 25,
+  "speed": 50
+}, {
+  "no": 99,
+  "specialAttack": 50,
+  "specialDefense": 50,
+  "speed": 75
+}, {
+  "no": 100,
+  "specialAttack": 55,
+  "specialDefense": 55,
+  "speed": 100
+}, {
+  "no": 101,
+  "specialAttack": 80,
+  "specialDefense": 80,
+  "speed": 140
+}, {
+  "no": 102,
+  "specialAttack": 60,
+  "specialDefense": 45,
+  "speed": 40
+}, {
+  "no": 103,
+  "specialAttack": 125,
+  "specialDefense": 65,
+  "speed": 55
+}, {
+  "no": 104,
+  "specialAttack": 40,
+  "specialDefense": 50,
+  "speed": 35
+}, {
+  "no": 105,
+  "specialAttack": 50,
+  "specialDefense": 80,
+  "speed": 45
+}, {
+  "no": 106,
+  "specialAttack": 35,
+  "specialDefense": 110,
+  "speed": 87
+}, {
+  "no": 107,
+  "specialAttack": 35,
+  "specialDefense": 110,
+  "speed": 76
+}, {
+  "no": 108,
+  "specialAttack": 60,
+  "specialDefense": 75,
+  "speed": 30
+}, {
+  "no": 109,
+  "specialAttack": 60,
+  "specialDefense": 45,
+  "speed": 35
+}, {
+  "no": 110,
+  "specialAttack": 85,
+  "specialDefense": 70,
+  "speed": 60
+}, {
+  "no": 111,
+  "specialAttack": 30,
+  "specialDefense": 30,
+  "speed": 25
+}, {
+  "no": 112,
+  "specialAttack": 45,
+  "specialDefense": 45,
+  "speed": 40
+}, {
+  "no": 113,
+  "specialAttack": 35,
+  "specialDefense": 105,
+  "speed": 50
+}, {
+  "no": 114,
+  "specialAttack": 100,
+  "specialDefense": 40,
+  "speed": 60
+}, {
+  "no": 115,
+  "specialAttack": 40,
+  "specialDefense": 80,
+  "speed": 90
+}, {
+  "no": 116,
+  "specialAttack": 70,
+  "specialDefense": 25,
+  "speed": 60
+}, {
+  "no": 117,
+  "specialAttack": 95,
+  "specialDefense": 45,
+  "speed": 85
+}, {
+  "no": 118,
+  "specialAttack": 35,
+  "specialDefense": 50,
+  "speed": 63
+}, {
+  "no": 119,
+  "specialAttack": 65,
+  "specialDefense": 80,
+  "speed": 68
+}, {
+  "no": 120,
+  "specialAttack": 70,
+  "specialDefense": 55,
+  "speed": 85
+}, {
+  "no": 121,
+  "specialAttack": 100,
+  "specialDefense": 85,
+  "speed": 115
+}, {
+  "no": 122,
+  "specialAttack": 100,
+  "specialDefense": 120,
+  "speed": 90
+}, {
+  "no": 123,
+  "specialAttack": 55,
+  "specialDefense": 80,
+  "speed": 105
+}, {
+  "no": 124,
+  "specialAttack": 115,
+  "specialDefense": 95,
+  "speed": 95
+}, {
+  "no": 125,
+  "specialAttack": 95,
+  "specialDefense": 85,
+  "speed": 105
+}, {
+  "no": 126,
+  "specialAttack": 100,
+  "specialDefense": 85,
+  "speed": 93
+}, {
+  "no": 127,
+  "specialAttack": 55,
+  "specialDefense": 70,
+  "speed": 85
+}, {
+  "no": 128,
+  "specialAttack": 40,
+  "specialDefense": 70,
+  "speed": 110
+}, {
+  "no": 129,
+  "specialAttack": 15,
+  "specialDefense": 20,
+  "speed": 80
+}, {
+  "no": 130,
+  "specialAttack": 60,
+  "specialDefense": 100,
+  "speed": 81
+}, {
+  "no": 131,
+  "specialAttack": 85,
+  "specialDefense": 95,
+  "speed": 60
+}, {
+  "no": 132,
+  "specialAttack": 48,
+  "specialDefense": 48,
+  "speed": 48
+}, {
+  "no": 133,
+  "specialAttack": 45,
+  "specialDefense": 65,
+  "speed": 55
+}, {
+  "no": 134,
+  "specialAttack": 110,
+  "specialDefense": 95,
+  "speed": 65
+}, {
+  "no": 135,
+  "specialAttack": 110,
+  "specialDefense": 95,
+  "speed": 130
+}, {
+  "no": 136,
+  "specialAttack": 95,
+  "specialDefense": 110,
+  "speed": 65
+}, {
+  "no": 137,
+  "specialAttack": 85,
+  "specialDefense": 75,
+  "speed": 40
+}, {
+  "no": 138,
+  "specialAttack": 90,
+  "specialDefense": 55,
+  "speed": 35
+}, {
+  "no": 139,
+  "specialAttack": 115,
+  "specialDefense": 70,
+  "speed": 55
+}, {
+  "no": 140,
+  "specialAttack": 55,
+  "specialDefense": 45,
+  "speed": 55
+}, {
+  "no": 141,
+  "specialAttack": 65,
+  "specialDefense": 70,
+  "speed": 80
+}, {
+  "no": 142,
+  "specialAttack": 60,
+  "specialDefense": 75,
+  "speed": 130
+}, {
+  "no": 143,
+  "specialAttack": 65,
+  "specialDefense": 110,
+  "speed": 30
+}, {
+  "no": 144,
+  "specialAttack": 95,
+  "specialDefense": 125,
+  "speed": 85
+}, {
+  "no": 145,
+  "specialAttack": 125,
+  "specialDefense": 90,
+  "speed": 100
+}, {
+  "no": 146,
+  "specialAttack": 125,
+  "specialDefense": 85,
+  "speed": 90
+}, {
+  "no": 147,
+  "specialAttack": 50,
+  "specialDefense": 50,
+  "speed": 50
+}, {
+  "no": 148,
+  "specialAttack": 70,
+  "specialDefense": 70,
+  "speed": 70
+}, {
+  "no": 149,
+  "specialAttack": 100,
+  "specialDefense": 100,
+  "speed": 80
+}, {
+  "no": 150,
+  "specialAttack": 154,
+  "specialDefense": 90,
+  "speed": 130
+}, {
+  "no": 151,
+  "specialAttack": 100,
+  "specialDefense": 100,
+  "speed": 100
+}]
